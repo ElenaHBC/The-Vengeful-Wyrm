@@ -19,7 +19,7 @@ Should all of these functions be in different modules for better overview?
 
 # Function for choosing a character: 
 # short description, saving the choice 
-# naming the character, giving a detailed description of the character?
+
 
 characters = {
     "first" : {
@@ -75,6 +75,9 @@ def choose_character(characters):
         else:
             return char_choice
         
+# Function for naming the character: 
+# naming the character, giving a detailed description of the character?
+
 def name_character():
     while True:
         name = input("Please give a name to your character: ")
@@ -84,6 +87,28 @@ def name_character():
         else:
             print("Please enter a name that contains only letters and no spaces.")
 
+# Function for detailed description:
 
-choose_character(characters)
+def descr_character(char_choice):
+    if char_choice == "first":
+        with open("dwarf.txt", encoding='utf-8') as descr_file:
+            content = descr_file.read()
+            return character_name, content
+    elif char_choice == "second":
+        with open("elf.txt", encoding='utf-8') as descr_file:
+            content = descr_file.read()
+            return character_name, content
+    else:
+        with open("human.txt", encoding='utf-8') as descr_file:
+            content = descr_file.read()
+            return character_name, content
+"""
+char_choice = choose_character(characters)
 name_character()
+descr_character(char_choice, name_character)
+"""
+
+char_choice = choose_character(characters)
+character_name = name_character()
+character_description = descr_character(char_choice)
+print(character_description, end='')
