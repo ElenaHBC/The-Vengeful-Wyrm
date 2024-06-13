@@ -76,8 +76,14 @@ def choose_character(characters):
             return char_choice
         
 def name_character():
-    name = input("Please give a name to your character: ")
-    if name is
+    while True:
+        name = input("Please give a name to your character: ")
+        if name.isalpha():
+            print(f"Greetings {name}!")
+            return name
+        else:
+            print("Please enter a name that contains only letters and no spaces.")
 
 
 choose_character(characters)
+name_character()
