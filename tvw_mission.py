@@ -32,6 +32,25 @@ def mission():
     return save_Dayereth
 
 # function for outcome of the answer for the mission
+def mission_decision():
+    while True:
+        if mission == "no":
+            save_Dayereth = input(f"I cannot believe my ears, {character_name}, are you really sure?: ")
+            if save_Dayereth == "yes":
+                with open("mission_decline.txt", encoding='utf-8') as mission_decline_file: #write a story about death and regret
+                    content = mission_decline_file.read().replace("\n", " ")
+                    print (content)
+                    break
+            elif save_Dayereth == "no": # I am glad you changed your mind, read file way to forest
+                with open("mission_accept.txt", encoding='utf-8') as mission_accept_file:
+                    content = mission_accept_file.read().replace("\n", " ")
+                    print (content)
+                    break
+            else: # I do not understend, loop to the beginning
+                print(f"'I did not understand that, {character_name}!' Could you repeat?")
+    return save_Dayereth
+
+
 
 # function for the choice of the way
 
