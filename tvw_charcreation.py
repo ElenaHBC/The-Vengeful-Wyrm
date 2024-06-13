@@ -82,7 +82,7 @@ def name_character():
     while True:
         name = input("Please give a name to your character: ")
         if name.isalpha():
-            print(f"Greetings {name}!")
+            print(f"Greetings, {name}!")
             return name
         else:
             print("Please enter a name that contains only letters and no spaces.")
@@ -92,15 +92,15 @@ def name_character():
 def descr_character(char_choice):
     if char_choice == "first":
         with open("dwarf.txt", encoding='utf-8') as descr_file:
-            content = descr_file.read()
+            content = descr_file.read().replace("\n", " ")
             return character_name, content
     elif char_choice == "second":
         with open("elf.txt", encoding='utf-8') as descr_file:
-            content = descr_file.read()
+            content = descr_file.read().replace("\n", " ")
             return character_name, content
     else:
         with open("human.txt", encoding='utf-8') as descr_file:
-            content = descr_file.read()
+            content = descr_file.read().replace("\n", " ")
             return character_name, content
 """
 char_choice = choose_character(characters)
@@ -111,4 +111,4 @@ descr_character(char_choice, name_character)
 char_choice = choose_character(characters)
 character_name = name_character()
 character_description = descr_character(char_choice)
-print(character_description, end='')
+print(character_description)
