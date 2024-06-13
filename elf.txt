@@ -1,0 +1,7 @@
+ is an elf ranger, skilled with the bow and at home in the wilderness.
+
+Description and Background:
+This elf ranger is a swift and precise marksman with 13 hit points and an armor class of 10. 
+Wielding a long bow, they strike with an attack bonus of +3, dealing +2 damage with each arrow. 
+Their initiative bonus of +3 and athletics skill of +3 make them agile and quick in battle. 
+Raised in the deep forests, they have honed their skills in archery and survival, becoming a guardian of nature.
