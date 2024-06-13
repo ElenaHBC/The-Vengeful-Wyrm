@@ -51,3 +51,15 @@ flowchart TD
     J --> L[lose] --> |Boo, play again? no| M
     J --> |Boo, play again? yes| A
 ```
+
+## Modules
+There will be different modules with separate functions needed for the game.
+
+> tvw_charcreation: 
+- choose_character()
+- name_character()
+- descr_character()
+
+> tvw_mission:
+- 
+- 
