@@ -4,7 +4,8 @@ Creating a custom module DND_tvw with the functions needed for the game.
 Separate functions for:
 - choosing character from predefined list/dict while loop
 - giving name to the character while loop
-- learning details about the character if else + read file
+- learning details about the character + read file
+
 - saving the friend if else function
 - choosing a way while(if else)
 - short way riddle (like password func), 2 guesses while / or incorporate hangman style riddle
