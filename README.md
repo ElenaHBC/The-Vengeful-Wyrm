@@ -56,10 +56,14 @@ flowchart TD
 There will be different modules with separate functions needed for the game.
 
 > tvw_charcreation: 
-- choose_character()
+- choose_character(characters)
 - name_character()
-- descr_character()
+- descr_character(char_choice)
 
 > tvw_mission:
-- 
-- 
+- mission()
+- mission_decision(mission)
+
+> tvw_dices
+- D_6()
+- D_20()
