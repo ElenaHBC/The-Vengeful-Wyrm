@@ -65,5 +65,7 @@ There will be different modules with separate functions needed for the game.
 - mission_decision(mission)
 
 > tvw_dices
-- D_6()
-- D_20()
+- user_D6()
+- user_D20()
+- enemy_D6()
+- enemy_D20()
