@@ -2,7 +2,7 @@
 Module for the different functions for the different dices
 - D20: for initiative, attack and skill checks
 - D6: for damage
-- separate function for rolling the dice and saving the outcome
+- separate function for rolling the dice and saving the outcome + adding the modifier
 - separate functions for the user and enemy
 
 - include natural 20 (double damage) and natural 1?
@@ -13,6 +13,7 @@ Module for the different functions for the different dices
 """
 
 from random import randint
+from tvw_charcreation import characters, char_choice
 
 """ User's dices """
 # D6: dice with 6 sides
@@ -22,12 +23,18 @@ def user_D6():
         roll = input("To roll a D6 dice type anything: ")
         if roll:
             user_d6 = randint(1, 6)
-            print(f"You rolled a {user_d6}!")
-            return user_d6
+            user_damage = user_d6 + characters[char_choice]["damage"] #adding the damage modifier
+            print(f"You rolled a {user_d6}! With your additional +{characters[char_choice]["damage"]} modifier you deal {user_damage} damage in total.")
+            return user_damage
         else:
             print("You did not type anything, try again.")
 
+
 # D20: dice with 20 sides
+# adding modifier to D20 in this function will be problematic, 2 modifiers: for initiative and attack
+# another function for initiative and attack?
+# is a function even neccessary? just make a simple variable?
+
 def user_D20():
     while True:
         roll = input("To roll a D20 dice type anything: ")
