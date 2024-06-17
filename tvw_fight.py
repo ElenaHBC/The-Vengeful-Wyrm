@@ -4,9 +4,8 @@ Module for the functions of the fihgt
 """
 
 from tvw_dices import user_D6, user_D20, enemy_D6, enemy_D20
-from tvw_charcreation import characters, char_choice, character_name
+from tvw_charcreation import characters, choose_character, name_character
 
-user = characters[char_choice]
 
 # create an enemy character
 
@@ -24,7 +23,7 @@ wyrm = {
 # function for user's attack
 
 def user_attack(user_D20, user_D6):
-    user_attack = user_D20 + user["attack bonus"]
+    user_attack = user_D20() + user["attack bonus"]
     if user_attack >= wyrm["armor_class"]:
         print("Your attack was successful!")
         user_damage = user_D6()
@@ -35,7 +34,7 @@ def user_attack(user_D20, user_D6):
     return wyrm["hit points"]
 
 def enemy_attack(enemy_D20, enemy_D6):
-    enemy_attack = enemy_D20 + wyrm["attack bonus"]
+    enemy_attack = enemy_D20() + wyrm["attack bonus"]
     if enemy_attack >= user["armor_class"]:
         print("The enemy attack was successful!")
         enemy_damage = enemy_D6()
@@ -49,8 +48,8 @@ def enemy_attack(enemy_D20, enemy_D6):
 
 # function for fight
 def fight(user, enemy):
-    user_intiative = user_D20 + characters[char_choice]["initiative bonus"]
-    wyrm_initiative = enemy_D20 + wyrm["initiative bonus"]
+    user_intiative = user_D20() + characters[char_choice]["initiative bonus"]
+    wyrm_initiative = enemy_D20() + wyrm["initiative bonus"]
 
     if user_intiative >= wyrm_initiative: # the user attacks first 
         print(f"You attack first!")
