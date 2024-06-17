@@ -4,7 +4,9 @@ Module for the functions of the fihgt
 """
 
 from tvw_dices import user_D6, user_D20, enemy_D6, enemy_D20
-from tvw_charcreation import characters, char_choice
+from tvw_charcreation import characters, char_choice, character_name
+
+user = characters[char_choice]
 
 # create an enemy character
 
@@ -22,17 +24,26 @@ wyrm = {
 # function for user's attack
 
 def user_attack(user_D20, user_D6):
-    user_attack = user_D20 + characters[char_choice]["attack bonus"]
-    health_wyrm = wyrm["hit points"] # this probably restarts the hit points
+    user_attack = user_D20 + user["attack bonus"]
     if user_attack >= wyrm["armor_class"]:
-        print(f"Your attack was successful!")
-        user_D6()
+        print("Your attack was successful!")
+        user_damage = user_D6()
         ... # attack succeeds, deal damage
-        health_wyrm -= user_damage
+        wyrm["hit points"] -= user_damage
     else:
-        print(f"Your attack failed!")
-    return health_wyrm
+        print("Your attack failed!")
+    return wyrm["hit points"]
 
+def enemy_attack(enemy_D20, enemy_D6):
+    enemy_attack = enemy_D20 + wyrm["attack bonus"]
+    if enemy_attack >= user["armor_class"]:
+        print("The enemy attack was successful!")
+        enemy_damage = enemy_D6()
+        ... # attack succeeds, deal damage
+        user["hit points"] -= enemy_damage
+    else:
+        print("The enemy attack failed!")
+    return user["hit points"]
 
 # function for wyrm's attack
 
@@ -40,11 +51,27 @@ def user_attack(user_D20, user_D6):
 def fight(user, enemy):
     user_intiative = user_D20 + characters[char_choice]["initiative bonus"]
     wyrm_initiative = enemy_D20 + wyrm["initiative bonus"]
+
     if user_intiative >= wyrm_initiative: # the user attacks first 
         print(f"You attack first!")
-        attacker, defender = user, enemy
+        attacker = user
     else: # the wyrm attacks first
         print(f"The Wyrm attacks first, brace yourself!")
-        attacker, defender = enemy, user
+        attacker = enemy
 
-    while user[]
+    while user["hit points"] > 0 and enemy["hit points"] > 0:
+        if attacker == user:
+            user_attack(user, enemy)
+            attacker = enemy
+        else:
+            enemy_attack(user, enemy)
+            attacker = user
+
+    if user["hit points"] <= 0:
+        print("The Wyrm land it's final blow and you are defeated! ")
+    else: 
+        print("You land your final blow on the Wyrm and hear a terrible screach as it dies.")
+        print(f"'{character_name}!' You hear a tearful voice. 'You have defeated the Wyrm! Thank you for rescuing me!'")
+        print(f"Behind the dead body of the Wyrm, you see your friend Dayereth.")
+
+        
