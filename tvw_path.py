@@ -4,7 +4,8 @@ Module for the choice of the path
 - wisdom way is crossing the river over the bridge with a troll who gives a riddle
 - strength way is swimming through the river and making a skill check
 """
-
+from tvw_charcreation import name_character
+character_name = name_character()
 
 def choose_path():
     while True:
@@ -15,7 +16,7 @@ def choose_path():
         else:
             print("This is not a valid response. Please choose either 'wisdom' or 'strength'.")
 
-def riddle():
+def riddle(character_name):
     print(f"You chose the path of wisdom, {character_name}. You see a bridge over the river and proceed to cross it.")
     print("As you come to the bridge you see a troll who demands a toll. *badumts*")
     print("Hello there, traveler! I see ya want to cross me bridge! I've to check if you are worthy! Answer this riddle for me, will ya.")
