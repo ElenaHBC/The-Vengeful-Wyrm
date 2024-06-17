@@ -4,7 +4,8 @@ Module for the choice of the path
 - wisdom way is crossing the river over the bridge with a troll who gives a riddle
 - strength way is swimming through the river and making a skill check
 """
-from tvw_charcreation import name_character
+from tvw_charcreation import name_character, characters
+from tvw_dices import user_D20
 character_name = name_character()
 
 def choose_path():
@@ -29,7 +30,7 @@ def riddle(character_name):
         # offer the choice of strength of fighing the troll, of just end the game and try again?
         return False
 
-def river():
+def river(character_name): #NameError: name 'character_name' is not defined whyyyyyyy
     print(f"You chose the path of strength, {character_name}. You make you way to the river and proceed to swim through it.")
     print("To do that you need to make a skill check and roll a D20.")
     skill_check = user_D20()
