@@ -70,7 +70,7 @@ def choose_character(characters):
         )
         print(description)
     while True: 
-        char_choice = input("To choose a character, please write first, second or third, accordingly: ")
+        char_choice = input("To choose a character, please write first, second or third, accordingly: ").lower()
         if char_choice not in characters:
             print("This is not an option.")
         else:
@@ -81,7 +81,7 @@ def choose_character(characters):
 
 def name_character():
     while True:
-        name = input("Please give a name to your character: ")
+        name = input("Please give a name to your character: ").capitalize()
         if name.isalpha():
             print(f"Greetings, {name}!")
             return name
