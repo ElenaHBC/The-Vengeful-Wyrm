@@ -59,7 +59,7 @@ characters = {
 }
 
 def choose_character(characters):
-    print("Please choose a character from the following list: ")
+    #print("Please choose a character from the following list: ") #remove the printing statements from the functions
     for char_num, char_inf in characters.items():
         description = (
             f"{char_num.capitalize()} option is a {char_inf['race']} {char_inf['class']} "
@@ -90,7 +90,7 @@ def name_character():
 
 # Function for detailed description:
 
-def descr_character(char_choice):
+def descr_character(char_choice, character_name):
     if char_choice == "first":
         with open("dwarf.txt", encoding='utf-8') as descr_file:
             content = descr_file.read().replace("\n", " ")
