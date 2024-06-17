@@ -103,11 +103,13 @@ def descr_character(char_choice):
         with open("human.txt", encoding='utf-8') as descr_file:
             content = descr_file.read().replace("\n", " ")
             return character_name, content
-"""
-char_choice = choose_character(characters)
-name_character()
-descr_character(char_choice, name_character)
-"""
+
+# include the intro to the game in this module 
+
+def game_intro():
+    with open("intro.txt", encoding='utf-8') as intro_file: # starting the game with a short intro about it
+        content = intro_file.read().replace("\n", " ")
+        return content 
 
 char_choice = choose_character(characters)
 character_name = name_character()
