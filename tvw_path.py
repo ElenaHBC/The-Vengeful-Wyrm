@@ -5,8 +5,6 @@ Module for the choice of the path
 - strength way is swimming through the river and making a skill check
 """
 
-from tvw_charcreation import character_name, characters, char_choice
-from tvw_dices import user_D20
 
 def choose_path():
     while True:
