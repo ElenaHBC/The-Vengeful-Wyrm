@@ -34,8 +34,12 @@ def river():
     print(f"You chose the path of strength, {character_name}. You make you way to the river and proceed to swim through it.")
     print("To do that you need to make a skill check and roll a D20.")
     skill_check = user_D20()
-    if skill_check + characters[char_choice]["athletics"] > 10:
+    if skill_check + characters[char_choice]["athletics"] > 10: # skill check succeeds
         print("You are a skillful master of the water and glide through it like a fish.")
         print("Once you are on the other side of the river you make your way to the forest.")
-
+        return True
+    else: # skill check fails
+        print("The river is violent this time of the year. You try to swim, but the current sweeps you away.")
+        print("Your armor drags you down and you drown.") 
+        return False
 
