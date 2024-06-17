@@ -34,6 +34,7 @@ def user_D6():
 # adding modifier to D20 in this function will be problematic, 2 modifiers: for initiative and attack
 # another function for initiative and attack?
 # is a function even neccessary? just make a simple variable?
+# maybe just a normal random D6 and D20 and then adding everything in the fight/checks?
 
 def user_D20():
     while True:
@@ -60,8 +61,3 @@ def enemy_D20():
     enemy_d20 = randint(1, 20)
     print(f"The Wyrm rolled a {enemy_d20}!")
     return enemy_d20
-
-user_D6()
-user_D20()
-enemy_D6()
-enemy_D20()

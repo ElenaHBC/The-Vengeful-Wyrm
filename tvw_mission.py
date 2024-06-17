@@ -55,10 +55,3 @@ def mission_decision(mission):
                         content = mission_accept_file.read().replace("\n", " ")
                         print (content)
                         return True
-
-
-
-# function for the choice of the way
-
-mission = mission()
-mission_decision(mission)

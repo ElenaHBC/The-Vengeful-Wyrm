@@ -110,8 +110,3 @@ def game_intro():
     with open("intro.txt", encoding='utf-8') as intro_file: # starting the game with a short intro about it
         content = intro_file.read().replace("\n", " ")
         return content 
-
-char_choice = choose_character(characters)
-character_name = name_character()
-character_description = descr_character(char_choice)
-print(character_description)
