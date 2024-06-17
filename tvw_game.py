@@ -25,7 +25,10 @@ def the_vengeful_wyrm():
     print(character_description)
     user = characters[char_choice]
         
-    if mission() == "yes" or mission_decision(mission, character_name) == True:
+    if mission(character_name) == "yes" or mission_decision(mission, character_name) == True:
+        with open("mission_accept.txt", encoding='utf-8') as mission_accept_file: 
+            content = mission_accept_file.read().replace("\n", " ")
+            print (content)
         path = choose_path()
         if path == "wisdom":
             riddle()
