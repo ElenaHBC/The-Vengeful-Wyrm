@@ -8,15 +8,17 @@ Create a module with functions for the mission:
 - if yes: read file with description of the way and choices
 - function which short/long way
 """
-from tvw_charcreation import character_name
+from tvw_charcreation import name_character
+character_name = name_character()
+
 
 # function for accepting mission or declining
-def mission():
+def mission(character_name):
     print("*"*20 + " Chapter One: Huge Shadow " + "*"*20)
     with open("mission.txt", encoding='utf-8') as mission_file:
         content = mission_file.read().replace("\n", " ")
         print (content)
-    while True: #this creates an endless loop
+    while True: 
         print("."*20)
         print(f"You have to save him, {character_name}! Please, will you help?")
         save_Dayereth = input("To answer, please type yes or no: ").lower()
@@ -31,7 +33,8 @@ def mission():
     return save_Dayereth
 
 # function for outcome of the answer for the mission, uses the outcome of mission() func as argument
-def mission_decision(mission):
+def mission_decision(mission, character_name):
+        character_name = name_character()
         if mission == "no":
             while True:
                 save_Dayereth = input(f"{character_name}, are you really sure?: ").lower()
