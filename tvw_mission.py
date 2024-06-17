@@ -19,7 +19,7 @@ def mission():
     while True: #this creates an endless loop
         print("."*20)
         print(f"You have to save him, {character_name}! Please, will you help?")
-        save_Dayereth = input("To answer, please type yes or no: ")
+        save_Dayereth = input("To answer, please type yes or no: ").lower()
         if save_Dayereth == "yes":
             print(f"'Thank you, {character_name}!' said Thara sighing in relief and overcomed by exhaustion, faints.")
             break
@@ -34,7 +34,7 @@ def mission():
 def mission_decision(mission):
         if mission == "no":
             while True:
-                save_Dayereth = input(f"{character_name}, are you really sure?: ")
+                save_Dayereth = input(f"{character_name}, are you really sure?: ").lower()
                 if save_Dayereth == "yes":
                     with open("mission_decline.txt", encoding='utf-8') as mission_decline_file: #write a story about death and regret
                         content = mission_decline_file.read().replace("\n", " ")

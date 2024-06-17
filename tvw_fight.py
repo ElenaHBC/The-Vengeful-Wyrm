@@ -21,29 +21,30 @@ wyrm = {
 
 # function for user's attack
 
-def user_attack():
+def user_attack(user_D20, user_D6):
     user_attack = user_D20 + characters[char_choice]["attack bonus"]
     health_wyrm = wyrm["hit points"] # this probably restarts the hit points
     if user_attack >= wyrm["armor_class"]:
+        print(f"Your attack was successful!")
+        user_D6()
         ... # attack succeeds, deal damage
-        health_wyrm -= damage
+        health_wyrm -= user_damage
     else:
-        ... # attack fails, you miss
+        print(f"Your attack failed!")
     return health_wyrm
 
 
 # function for wyrm's attack
 
 # function for fight
-def fight():
+def fight(user, enemy):
     user_intiative = user_D20 + characters[char_choice]["initiative bonus"]
     wyrm_initiative = enemy_D20 + wyrm["initiative bonus"]
-    if user_intiative > wyrm_initiative: # the user attacks first
-        player = user
-    elif user_intiative < wyrm_initiative: # the wyrm attacks first
-        ...
-    else: # the initiative is the same, compare initiative bonus to see who goes first
-        if characters[char_choice]["initiative bonus"] > wyrm["initiative bonus"]:
-            ... # the user attacks first
-        else:
-            ... # the wyrm attacks first
+    if user_intiative >= wyrm_initiative: # the user attacks first 
+        print(f"You attack first!")
+        attacker, defender = user, enemy
+    else: # the wyrm attacks first
+        print(f"The Wyrm attacks first, brace yourself!")
+        attacker, defender = enemy, user
+
+    while user[]
