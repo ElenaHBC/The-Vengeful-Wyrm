@@ -13,7 +13,6 @@ Module for the different functions for the different dices
 """
 
 from random import randint
-from tvw_charcreation import characters, char_choice
 
 """ User's dices """
 # D6: dice with 6 sides
