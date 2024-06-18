@@ -6,7 +6,6 @@ Module for the choice of the path
 """
 
 from tvw_dices import user_D20
-from tvw_charcreation import characters
 
 
 def choose_path():

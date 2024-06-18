@@ -17,12 +17,12 @@ from random import randint
 """ User's dices """
 # D6: dice with 6 sides
 
-def user_D6():
+def user_D6(user):
     while True:
         roll = input("To roll a D6 dice type anything: ")
         if roll:
             user_d6 = randint(1, 6)
-            user_damage = user_d6 + characters[char_choice]["damage"] #adding the damage modifier
+            user_damage = user_d6 + user["damage"] #adding the damage modifier
             print(f"You rolled a {user_d6}! With your additional +{characters[char_choice]["damage"]} modifier you deal {user_damage} damage in total.")
             return user_damage
         else:

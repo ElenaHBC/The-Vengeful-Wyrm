@@ -79,7 +79,7 @@ def choose_character(characters):
 # Function for naming the character: 
 # naming the character, giving a detailed description of the character?
 
-def name_character():
+def name_character(name):
     while True:
         name = input("Please give a name to your character: ").capitalize()
         if name.isalpha():

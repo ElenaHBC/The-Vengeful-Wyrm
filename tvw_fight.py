@@ -46,9 +46,10 @@ def enemy_attack(enemy_D20, enemy_D6, user):
 # function for wyrm's attack
 
 # function for fight
-def fight(user, enemy):
-    user_intiative = user_D20() + characters[char_choice]["initiative bonus"]
+def fight(user, enemy, character_name):
+    user_intiative = user_D20() + user["initiative bonus"]
     wyrm_initiative = enemy_D20() + wyrm["initiative bonus"]
+    enemy = wyrm
 
     if user_intiative >= wyrm_initiative: # the user attacks first 
         print(f"You attack first!")
