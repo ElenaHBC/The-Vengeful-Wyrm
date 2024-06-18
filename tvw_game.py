@@ -7,11 +7,10 @@ Create a game function to:
 - offer possibility to play again
 """
 
-from random import randint
 from tvw_charcreation import game_intro, characters, choose_character, name_character, descr_character
-from tvw_dices import user_D6, user_D20, enemy_D6, enemy_D20
 from tvw_mission import mission, mission_decision
 from tvw_path import choose_path, riddle, river
+from tvw_fight import fight
 
 # defining some variables, so the code is more clean
 
@@ -31,9 +30,9 @@ def the_vengeful_wyrm():
             print (content)
         path = choose_path()
         if path == "wisdom":
-            riddle()
+            riddle(character_name)
         else:
-            river()
+            river(character_name)
 
     else:
         print("By declining the mission you decided not to play this game. This is disapointing.")

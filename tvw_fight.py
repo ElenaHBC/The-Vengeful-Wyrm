@@ -4,7 +4,6 @@ Module for the functions of the fihgt
 """
 
 from tvw_dices import user_D6, user_D20, enemy_D6, enemy_D20
-from tvw_charcreation import characters, choose_character, name_character
 
 
 # create an enemy character
@@ -22,7 +21,7 @@ wyrm = {
 
 # function for user's attack
 
-def user_attack(user_D20, user_D6):
+def user_attack(user_D20, user_D6, user):
     user_attack = user_D20() + user["attack bonus"]
     if user_attack >= wyrm["armor_class"]:
         print("Your attack was successful!")
@@ -33,7 +32,7 @@ def user_attack(user_D20, user_D6):
         print("Your attack failed!")
     return wyrm["hit points"]
 
-def enemy_attack(enemy_D20, enemy_D6):
+def enemy_attack(enemy_D20, enemy_D6, user):
     enemy_attack = enemy_D20() + wyrm["attack bonus"]
     if enemy_attack >= user["armor_class"]:
         print("The enemy attack was successful!")

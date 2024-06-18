@@ -8,8 +8,6 @@ Create a module with functions for the mission:
 - if yes: read file with description of the way and choices
 - function which short/long way
 """
-from tvw_charcreation import name_character
-character_name = name_character()
 
 
 # function for accepting mission or declining
@@ -34,7 +32,6 @@ def mission(character_name):
 
 # function for outcome of the answer for the mission, uses the outcome of mission() func as argument
 def mission_decision(mission, character_name):
-        character_name = name_character()
         if mission == "no":
             while True:
                 save_Dayereth = input(f"{character_name}, are you really sure?: ").lower()
