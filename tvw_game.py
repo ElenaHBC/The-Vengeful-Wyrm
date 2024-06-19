@@ -79,15 +79,23 @@ def the_vengeful_wyrm():
         path = choose_path()
         if path == "wisdom":
             if riddle(character_name) == True:
+                print("You make your way on the bridge and to the forest.")
+                with open("forest.txt", encoding='utf-8') as forest_file: 
+                    content = forest_file.read().replace("\n", " ")
+                    print (content)
                 fight(user, enemy, character_name)
             else: 
                 print("The trolls eats you. Game over.")
                 exit()
         else:
             if river(character_name, user) == True:
+                print("Once you are on the other side of the river you make your way to the forest.")
+                with open("forest.txt", encoding='utf-8') as forest_file: 
+                    content = forest_file.read().replace("\n", " ")
+                    print (content)
                 fight(user, enemy, character_name)
             else: 
-                print("You drown. Game over.")
+                print("Game over.")
                 exit()
             
 
