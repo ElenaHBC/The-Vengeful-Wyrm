@@ -78,18 +78,16 @@ def the_vengeful_wyrm():
             print (content)
         path = choose_path()
         if path == "wisdom":
-            riddle(character_name)
             if riddle(character_name) == True:
                 fight(user, enemy, character_name)
             else: 
                 print("The trolls eats you. Game over.")
                 exit()
         else:
-            river(character_name)
-            if river(character_name) == True:
+            if river(character_name, user) == True:
                 fight(user, enemy, character_name)
             else: 
-                print("You drown.")
+                print("You drown. Game over.")
                 exit()
             
 
