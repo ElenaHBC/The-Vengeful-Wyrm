@@ -11,6 +11,7 @@ from tvw_dices import user_D20
 def choose_path():
     while True:
         print("You see a river blocking your way. To cross the river you have to choose between to paths.")
+        print("."*20)
         path = input("Do you choose the path of wisdom or the path of strength? (wisdom/strength): ").lower()
         if path in ["wisdom","strength"]:
             return path
@@ -20,6 +21,7 @@ def choose_path():
 def riddle(character_name):
     print(f"You chose the path of wisdom, {character_name}. You see a bridge over the river and proceed to cross it.")
     print("As you come to the bridge you see a troll who demands a toll. *badumts*")
+    print("."*20)
     print("Hello there, traveler! I see ya want to cross me bridge! I've to check if you are worthy! Answer this riddle for me, will ya.")
     riddle_answer = input("What is always in front of you but can't be seen?: ").lower()
     if riddle_answer in ["the future", "future"]:

@@ -62,7 +62,8 @@ wyrm = {
 
 
 def the_vengeful_wyrm():
-    print(game_intro())
+    print(game_intro(),"\n")
+    print("*"*20 + " Choose your character " + "*"*20)
     print("Please choose a character from the following list: ")
 
     char_choice = choose_character(characters)
@@ -72,7 +73,8 @@ def the_vengeful_wyrm():
     user = characters[char_choice]
     enemy = wyrm
         
-    if mission(character_name) == "yes" or mission_decision(mission, character_name) == True:
+    if mission(character_name) == True or mission_decision(mission, character_name) == True:
+        print("*"*20 + " Chapter Two: Right Path " + "*"*20)
         with open("mission_accept.txt", encoding='utf-8') as mission_accept_file: 
             content = mission_accept_file.read().replace("\n", " ")
             print (content)
@@ -80,6 +82,7 @@ def the_vengeful_wyrm():
         if path == "wisdom":
             if riddle(character_name) == True:
                 print("You make your way on the bridge and to the forest.")
+                print("*"*20 + " Chapter Three: Wyrm's Lair " + "*"*20)
                 with open("forest.txt", encoding='utf-8') as forest_file: 
                     content = forest_file.read().replace("\n", " ")
                     print (content)
@@ -90,6 +93,7 @@ def the_vengeful_wyrm():
         else:
             if river(character_name, user) == True:
                 print("Once you are on the other side of the river you make your way to the forest.")
+                print("*"*20 + " Chapter Three: Wyrm's Lair " + "*"*20)
                 with open("forest.txt", encoding='utf-8') as forest_file: 
                     content = forest_file.read().replace("\n", " ")
                     print (content)

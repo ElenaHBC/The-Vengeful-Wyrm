@@ -22,10 +22,10 @@ def mission(character_name):
         save_Dayereth = input("To answer, please type yes or no: ").lower()
         if save_Dayereth == "yes":
             print(f"'Thank you, {character_name}!' said Thara sighing in relief and overcomed by exhaustion, faints.")
-            break
+            return True
         elif save_Dayereth == "no":
             print(f"'I cannot believe my ears, {character_name}!' said Thara gasping in disbelief.")
-            break
+            return False
         else:
             print(f"'I did not understand that, {character_name}!' Could you repeat?")
     return save_Dayereth
