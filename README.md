@@ -56,6 +56,7 @@ flowchart TD
 There will be different modules with separate functions needed for the game.
 
 > tvw_charcreation: 
+- game_intro()
 - choose_character(characters)
 - name_character()
 - descr_character(char_choice)
@@ -69,3 +70,16 @@ There will be different modules with separate functions needed for the game.
 - user_D20()
 - enemy_D6()
 - enemy_D20()
+
+> tvw_path
+- choose_path()
+- riddle()
+- river()
+
+> tvw_fight
+- user_attack()
+- enemy_attack()
+- fight()
+
+> tvw_game
+- the_vengeful_wyrm()
