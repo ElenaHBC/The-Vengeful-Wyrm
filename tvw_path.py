@@ -35,10 +35,12 @@ def river(character_name, user):
     print("To do that you need to make a skill check and roll a D20.")
     skill_check = user_D20()
     if skill_check + user["athletics"] > 10: # skill check succeeds
+        print(f"With your athletics modifier of +{user["athletics"]} is your total {skill_check + user["athletics"]}. Success!")
         print("You are a skillful master of the water and glide through it like a fish.")
         print("Once you are on the other side of the river you make your way to the forest.")
         return True
     else: # skill check fails
+        print(f"With your athletics modifier of +{user["athletics"]} is your total {skill_check + user["athletics"]}. This fails!")
         print("The river is violent this time of the year. You try to swim, but the current sweeps you away.")
         print("Your armor drags you down and you drown.") 
         return False
