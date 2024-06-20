@@ -64,10 +64,11 @@ def fight(user, enemy, character_name):
             attacker = enemy
         else:
             enemy_attack(enemy_D20, enemy_D6, user)
+            print(f"{character_name}, you have {user["hit points"]} left.")
             attacker = user
 
     if user["hit points"] <= 0:
-        print("The Wyrm land it's final blow and you are defeated! ")
+        print("The Wyrm lands it's final blow and you are defeated! ")
     else: 
         print("You land your final blow on the Wyrm and hear a terrible screach as it dies.")
         print(f"'{character_name}!' You hear a tearful voice. 'You have defeated the Wyrm! Thank you for rescuing me!'")
