@@ -25,22 +25,22 @@ def user_attack(user_D20, user_D6, user):
     user_attack = user_D20() + user["attack bonus"]
     if user_attack >= wyrm["armor_class"]:
         print("Your attack was successful! Roll for damage.")
-        user_damage = user_D6()
+        user_damage = user_D6(user)
         ... # attack succeeds, deal damage
         wyrm["hit points"] -= user_damage
     else:
-        print("Your attack failed!")
+        print("Your attack failed! The wyrm will attack you now.")
     return wyrm["hit points"]
 
 def enemy_attack(enemy_D20, enemy_D6, user):
     enemy_attack = enemy_D20() + wyrm["attack bonus"]
     if enemy_attack >= user["armor_class"]:
         print("The enemy attack was successful!")
-        enemy_damage = enemy_D6()
+        enemy_damage = enemy_D6(wyrm)
         ... # attack succeeds, deal damage
         user["hit points"] -= enemy_damage
     else:
-        print("The enemy attack failed!")
+        print("The enemy attack failed! Now you roll for an attack.")
     return user["hit points"]
 
 # function for wyrm's attack
