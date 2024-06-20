@@ -107,8 +107,5 @@ def the_vengeful_wyrm():
         print("By declining the mission you decided not to play this game. This is disapointing.")
         exit()
 
-    if riddle(character_name) == True or river(character_name) == True:
-        fight(user, enemy, character_name)
-
         
 the_vengeful_wyrm()
