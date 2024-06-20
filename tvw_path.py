@@ -10,7 +10,7 @@ from tvw_dices import user_D20
 
 def choose_path():
     while True:
-        print("You see a river blocking your way. To cross the river you have to choose between to paths.")
+        print("You see a river blocking your way. To cross the river you have to choose between two paths.")
         print("."*20)
         path = input("Do you choose the path of wisdom or the path of strength? (wisdom/strength): ").lower()
         if path in ["wisdom","strength"]:

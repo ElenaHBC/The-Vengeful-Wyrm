@@ -36,7 +36,7 @@ def enemy_attack(enemy_D20, enemy_D6, user):
     enemy_attack = enemy_D20() + wyrm["attack bonus"]
     if enemy_attack >= user["armor_class"]:
         print("The enemy attack was successful!")
-        enemy_damage = enemy_D6(wyrm)
+        enemy_damage = enemy_D6(wyrm) + wyrm["damage"]
         ... # attack succeeds, deal damage
         user["hit points"] -= enemy_damage
     else:
@@ -64,7 +64,7 @@ def fight(user, enemy, character_name):
             attacker = enemy
         else:
             enemy_attack(enemy_D20, enemy_D6, user)
-            print(f"{character_name}, you have {user["hit points"]} left.")
+            print(f"{character_name}, you have {user["hit points"]} hit points left.")
             attacker = user
 
     if user["hit points"] <= 0:

@@ -67,7 +67,7 @@ def the_vengeful_wyrm():
     time.sleep(1)
     print("*"*20 + " Choose your character " + "*"*20)
     time.sleep(1)
-    print("Please choose a character from the following list: ")
+    print("Please choose a character from the following list: \n")
     time.sleep(1)
 
     char_choice = choose_character(characters)
@@ -80,9 +80,9 @@ def the_vengeful_wyrm():
         
     if mission_result == True or mission_decision(mission_result, character_name) == True:
         print("*"*20 + " Chapter Two: Right Path " + "*"*20)
-        time.sleep(1)
         with open("mission_accept.txt", encoding='utf-8') as mission_accept_file: 
             content = mission_accept_file.read().replace("\n", " ")
+            time.sleep(0.5)
             print (content)
         path = choose_path()
         if path == "wisdom":
@@ -112,7 +112,7 @@ def the_vengeful_wyrm():
             
 
     else:
-        print("By declining the mission you decided not to play this game. This is disapointing.")
+        print("\nBy declining the mission you decided not to play this game. This is disapointing.")
         exit()
 
 play_again = "yes"

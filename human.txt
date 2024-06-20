@@ -1,7 +1,7 @@
  is a human wizard, master of arcane fire and ancient spells.
 
 Description and Background:
-A human wizard with 12 hit points and an armor class of 11, they command powerful magic. 
-Equipped with devastating fireballs, they possess an attack bonus of +2 and inflict +4 damage per spell. 
-Their initiative bonus of +4 allows them to act swiftly in any encounter, while their athletics skill of +2 shows a balance between physical prowess and magical might. 
+A human wizard with 12 hit points and an armor class of 11, they command powerful magic.
+Equipped with devastating fireballs, they possess an attack bonus of +2 and inflict +4 damage per spell.
+Their initiative bonus of +4 allows them to act swiftly in any encounter, while their athletics skill of +2 shows a balance between physical prowess and magical might.
 Trained in the grand halls of a mystical academy, they have unlocked the secrets of elemental fire.

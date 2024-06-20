@@ -1,7 +1,7 @@
  is stalwart dwarf fighter, ready to defend our realm with a trusty battle axe.
 
 Description and Background:
-A seasoned warrior with 15 hit points and an armor class of 12, this dwarf fighter is built for battle. 
-With a powerful battle axe in hand, they boast an attack bonus of +3 and deal +2 damage per strike. 
-Their initiative bonus of +2 ensures they are quick to engage in combat, though their athletics skill of 1 means they rely more on resilience than agility. 
+A seasoned warrior with 15 hit points and an armor class of 12, this dwarf fighter is built for battle.
+With a powerful battle axe in hand, they boast an attack bonus of +3 and deal +2 damage per strike.
+Their initiative bonus of +2 ensures they are quick to engage in combat, though their athletics skill of 1 means they rely more on resilience than agility.
 Hailing from the rugged mountains, they have spent their life mastering the art of warfare.

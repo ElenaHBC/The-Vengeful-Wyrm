@@ -69,6 +69,7 @@ def choose_character(characters):
             f"they have an athletics skill of {char_inf['athletics']}."
         )
         print(description)
+        print()
     while True: 
         char_choice = input("To choose a character, please write first, second or third, accordingly: ").lower()
         if char_choice not in characters:

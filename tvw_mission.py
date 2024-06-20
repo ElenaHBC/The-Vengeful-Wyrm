@@ -8,23 +8,25 @@ Create a module with functions for the mission:
 - if yes: read file with description of the way and choices
 - function which short/long way
 """
-
+import time
 
 # function for accepting mission or declining
 def mission(character_name):
-    print("*"*20 + " Chapter One: Huge Shadow " + "*"*20)
+    print("\n" + "*"*20 + " Chapter One: Huge Shadow " + "*"*20)
     with open("mission.txt", encoding='utf-8') as mission_file:
         content = mission_file.read().replace("\n", " ")
-        print (content)
+        print (content, "\n")
     while True: 
         print("."*20)
         print(f"You have to save him, {character_name}! Please, will you help?")
         save_Dayereth = input("To answer, please type yes or no: ").lower()
         if save_Dayereth == "yes":
             print(f"'Thank you, {character_name}!' said Thara sighing in relief and overcomed by exhaustion, faints.")
+            time.sleep(0.5)
             return True
         elif save_Dayereth == "no":
             print(f"'I cannot believe my ears, {character_name}!' said Thara gasping in disbelief.")
+            time.sleep(0.5)
             return False
         else:
             print(f"'I did not understand that, {character_name}!' Could you repeat?")
@@ -38,7 +40,7 @@ def mission_decision(mission_result, character_name):
                 if ask_again == "yes":
                     with open("mission_decline.txt", encoding='utf-8') as mission_decline_file: #write a story about death and regret
                         content = mission_decline_file.read().replace("\n", " ")
-                        print (content)
+                        print ("\n", content)
                         return False # instead of break, so we can use this output/return for combination with other functions
                     
                 elif ask_again == "no": # I am glad you changed your mind, read file way to forest
