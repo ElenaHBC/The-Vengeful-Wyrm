@@ -24,7 +24,7 @@ wyrm = {
 def user_attack(user_D20, user_D6, user):
     user_attack = user_D20() + user["attack bonus"]
     if user_attack >= wyrm["armor_class"]:
-        print("Your attack was successful!")
+        print("Your attack was successful! Roll for damage.")
         user_damage = user_D6()
         ... # attack succeeds, deal damage
         wyrm["hit points"] -= user_damage
@@ -52,7 +52,7 @@ def fight(user, enemy, character_name):
     enemy = wyrm
 
     if user_intiative >= wyrm_initiative: # the user attacks first 
-        print(f"You attack first!")
+        print(f"You attack first! Roll for an attack.")
         attacker = user
     else: # the wyrm attacks first
         print(f"The Wyrm attacks first, brace yourself!")
@@ -60,10 +60,10 @@ def fight(user, enemy, character_name):
 
     while user["hit points"] > 0 and enemy["hit points"] > 0:
         if attacker == user:
-            user_attack(user, enemy)
+            user_attack(user_D20, user_D6, user)
             attacker = enemy
         else:
-            enemy_attack(user, enemy)
+            enemy_attack(enemy_D20, enemy_D6, user)
             attacker = user
 
     if user["hit points"] <= 0:
