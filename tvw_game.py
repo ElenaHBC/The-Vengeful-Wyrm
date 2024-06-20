@@ -115,5 +115,13 @@ def the_vengeful_wyrm():
         print("By declining the mission you decided not to play this game. This is disapointing.")
         exit()
 
-        
-the_vengeful_wyrm()
+play_again = "yes"
+
+while play_again == "yes".lower():
+    the_vengeful_wyrm()
+    play_again = input("Do you want to play again? yes/no: ")
+    if play_again == "no".lower():
+        break
+    else:
+        print("I did not understand that, please answer with yes or no.")
+
