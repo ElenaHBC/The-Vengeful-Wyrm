@@ -83,3 +83,9 @@ There will be different modules with separate functions needed for the game.
 
 > tvw_game
 - the_vengeful_wyrm()
+
+## To do
+> add a possibility for the user to play again:
+- at the end of the fight after win/lost
+- at the end of the path choices (riddle/river) if the user looses
+- after mission was declined
