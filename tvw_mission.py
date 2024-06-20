@@ -31,17 +31,17 @@ def mission(character_name):
 
 
 # function for outcome of the answer for the mission, uses the outcome of mission() func as argument
-def mission_decision(mission, character_name):
-        if mission == False:
+def mission_decision(mission_result, character_name):
+        if mission_result == False:
             while True:
-                save_Dayereth = input(f"{character_name}, are you really sure?: ").lower()
-                if save_Dayereth == "yes":
+                ask_again = input(f"{character_name}, are you really sure?: ").lower()
+                if ask_again == "yes":
                     with open("mission_decline.txt", encoding='utf-8') as mission_decline_file: #write a story about death and regret
                         content = mission_decline_file.read().replace("\n", " ")
                         print (content)
                         return False # instead of break, so we can use this output/return for combination with other functions
                     
-                elif save_Dayereth == "no": # I am glad you changed your mind, read file way to forest
+                elif ask_again == "no": # I am glad you changed your mind, read file way to forest
                     print(f"'I knew I could count on you, {character_name}!' said Thara sighing in relief and overcomed by exhaustion, faints.")
                     with open("mission_accept.txt", encoding='utf-8') as mission_accept_file:
                         content = mission_accept_file.read().replace("\n", " ")

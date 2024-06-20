@@ -76,8 +76,9 @@ def the_vengeful_wyrm():
     print(character_description)
     user = characters[char_choice]
     enemy = wyrm
+    mission_result = mission(character_name)
         
-    if mission(character_name) == True or mission_decision(mission, character_name) == True:
+    if mission_result == True or mission_decision(mission_result, character_name) == True:
         print("*"*20 + " Chapter Two: Right Path " + "*"*20)
         time.sleep(1)
         with open("mission_accept.txt", encoding='utf-8') as mission_accept_file: 
