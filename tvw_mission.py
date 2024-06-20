@@ -28,11 +28,11 @@ def mission(character_name):
             return False
         else:
             print(f"'I did not understand that, {character_name}!' Could you repeat?")
-    return save_Dayereth
+
 
 # function for outcome of the answer for the mission, uses the outcome of mission() func as argument
 def mission_decision(mission, character_name):
-        if mission == "no":
+        if mission == False:
             while True:
                 save_Dayereth = input(f"{character_name}, are you really sure?: ").lower()
                 if save_Dayereth == "yes":
