@@ -23,7 +23,7 @@ def user_D6(user):
         if roll:
             user_d6 = randint(1, 6)
             user_damage = user_d6 + user["damage"] #adding the damage modifier
-            print(f"You rolled a {user_d6}! With your additional +{characters[char_choice]["damage"]} modifier you deal {user_damage} damage in total.")
+            print(f"You rolled a {user_d6}! With your additional +{user["damage"]} modifier you deal {user_damage} damage in total.")
             return user_damage
         else:
             print("You did not type anything, try again.")
@@ -49,9 +49,9 @@ def user_D20():
 """ Enemy's dices """
 # D6: dice with 6 sides
 
-def enemy_D6():
+def enemy_D6(wyrm):
     enemy_d6 = randint(1, 6)
-    print(f"The Wyrm rolled a {enemy_d6}!")
+    print(f"The Wyrm rolled a {enemy_d6} and deals {enemy_d6 + wyrm["damage"]} damage in total.")
     return enemy_d6
 
 
