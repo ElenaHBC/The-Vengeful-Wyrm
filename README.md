@@ -89,3 +89,7 @@ There will be different modules with separate functions needed for the game.
 - at the end of the fight after win/lost
 - at the end of the path choices (riddle/river) if the user looses
 - after mission was declined
+
+> add time.sleep(secs) to some functions/print statements
+
+> add APIs with graphs for character, scenery
