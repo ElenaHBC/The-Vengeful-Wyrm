@@ -13,7 +13,7 @@ import requests
 
 
 # Astronomy Picture of the Day:
-API_KEY = 'ZaIvDcu36AW45sXrdEsgSNwBaNhmIfWO1IrkJbdW'
+API_KEY = ''
 response = requests.get(f"https://api.nasa.gov/planetary/apod?api_key={API_KEY}")
 
 
