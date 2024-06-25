@@ -86,10 +86,5 @@ There will be different modules with separate functions needed for the game.
 - play_again()
 
 ## To do
-> add a possibility for the user to play again:
-- at the end of the path choices (riddle/river) if the user looses
-- after mission was declined
-
-> add time.sleep(secs) to some functions/print statements
 
 > add APIs with graphs for character, scenery
