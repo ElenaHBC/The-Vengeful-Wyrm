@@ -64,11 +64,11 @@ wyrm = {
 
 def the_vengeful_wyrm():
     print(game_intro(),"\n")
-    time.sleep(1)
-    print("*"*20 + " Choose your character " + "*"*20)
-    time.sleep(1)
+    time.sleep(0.1)
+    print(f"{" Choose your character ":*^20}")
+    time.sleep(0.1)
     print("Please choose a character from the following list: \n")
-    time.sleep(1)
+    time.sleep(0.1)
 
     char_choice = choose_character(characters)
     character_name = name_character()
@@ -79,17 +79,17 @@ def the_vengeful_wyrm():
     mission_result = mission(character_name)
         
     if mission_result == True or mission_decision(mission_result, character_name) == True:
-        print("*"*20 + " Chapter Two: Right Path " + "*"*20)
+        print(f"{" Chapter Two: Right Path ":*^40}")
         with open("mission_accept.txt", encoding='utf-8') as mission_accept_file: 
             content = mission_accept_file.read().replace("\n", " ")
-            time.sleep(0.5)
+            time.sleep(0.1)
             print (content)
         path = choose_path()
         if path == "wisdom":
             if riddle(character_name) == True:
                 print("You make your way on the bridge and to the forest.")
-                time.sleep(1)
-                print("*"*20 + " Chapter Three: Wyrm's Lair " + "*"*20)
+                time.sleep(0.5)
+                print(f"{" Chapter Three: Wyrm's Lair ":*^40}")
                 with open("forest.txt", encoding='utf-8') as forest_file: 
                     content = forest_file.read().replace("\n", " ")
                     print (content)
@@ -100,8 +100,8 @@ def the_vengeful_wyrm():
         else:
             if river(character_name, user) == True:
                 print("Once you are on the other side of the river you make your way to the forest.")
-                time.sleep(1)
-                print("*"*20 + " Chapter Three: Wyrm's Lair " + "*"*20)
+                time.sleep(0.5)
+                print(f"{" Chapter Three: Wyrm's Lair ":*^40}")
                 with open("forest.txt", encoding='utf-8') as forest_file: 
                     content = forest_file.read().replace("\n", " ")
                     print (content)
@@ -117,10 +117,18 @@ def the_vengeful_wyrm():
 
 play_again = "yes"
 
+credits = {"Main character": "You", "Programmer": "Elena Tomeva", "Game idea": "Elena Tomeva", "Texts": "Elena Tomeva & ChatGpT", "Supervision": "PyLadies Vienna"}
+
 while play_again == "yes".lower():
     the_vengeful_wyrm()
     play_again = input("Do you want to play again? yes/no: ")
     if play_again == "no".lower():
+        print("Thank you for playing the game.\n")
+        print(f"{" Credits ":*^40}")
+        time.sleep(0.1)
+        for text, content in credits.items():
+            print(f"{text:15}     {content:10}")
+            time.sleep(0.1)
         break
     else:
         print("I did not understand that, please answer with yes or no.")
