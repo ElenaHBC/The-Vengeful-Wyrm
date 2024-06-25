@@ -65,7 +65,7 @@ wyrm = {
 def the_vengeful_wyrm():
     print(game_intro(),"\n")
     time.sleep(0.1)
-    print(f"{" Choose your character ":*^20}")
+    print(f"{" Choose your character ":*^40}")
     time.sleep(0.1)
     print("Please choose a character from the following list: \n")
     time.sleep(0.1)
@@ -95,8 +95,8 @@ def the_vengeful_wyrm():
                     print (content)
                 fight(user, enemy, character_name)
             else: 
-                print("The trolls eats you. Game over.")
-                exit()
+                print("The trolls eats you. Game over.\n")
+                return False # returns that you lost
         else:
             if river(character_name, user) == True:
                 print("Once you are on the other side of the river you make your way to the forest.")
@@ -107,13 +107,14 @@ def the_vengeful_wyrm():
                     print (content)
                 fight(user, enemy, character_name)
             else: 
-                print("Game over.")
-                exit()
+                print("Game over.\n")
+                return False # returns that you lost
             
 
     else:
         print("\nBy declining the mission you decided not to play this game. This is disapointing.")
-        exit()
+        return False
+    return True # returns that you won
 
 play_again = "yes"
 
@@ -130,6 +131,9 @@ while play_again == "yes".lower():
             print(f"{text:15}     {content:10}")
             time.sleep(0.1)
         break
+    elif play_again == "yes".lower():
+        continue
     else:
         print("I did not understand that, please answer with yes or no.")
+        play_again = "yes"
 
