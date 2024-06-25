@@ -23,14 +23,20 @@ def riddle(character_name):
     print("As you come to the bridge you see a troll who demands a toll. *badumts*")
     print("."*20)
     print("Hello there, traveler! I see ya want to cross me bridge! I've to check if you are worthy! Answer this riddle for me, will ya.")
-    riddle_answer = input("What is always in front of you but can't be seen?: ").lower()
-    if riddle_answer in ["the future", "future"]:
-        print("You're some clever traveler! I don't see your future, but I'm sure it is full of adventures! You may proceed.")
-        return True
-    else: 
-        print("Well, well, well... Another muttonheaded traveler on the road. You are not worthy of crossing my mighty bridge! ")
-        # offer the choice of strength of fighing the troll, of just end the game and try again?
-        return False
+    while True:
+        try:
+            riddle_answer = input("What is always in front of you but can't be seen?: ").lower()
+            if riddle_answer in ["the future", "future"]:
+                print("You're some clever traveler! I don't see your future, but I'm sure it is full of adventures! You may proceed.")
+                return True
+            elif not riddle_answer:
+                raise EOFError
+            else: 
+                print("Well, well, well... Another muttonheaded traveler on the road. You are not worthy of crossing my mighty bridge! ")
+                # offer the choice of strength of fighing the troll, of just end the game and try again?
+                return False
+        except EOFError:
+            print("Silence is not the right answer, think again and write your answer clearly!")
 
 def river(character_name, user): 
     print(f"You chose the path of strength, {character_name}. You make you way to the river and proceed to swim through it.")
