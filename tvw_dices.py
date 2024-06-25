@@ -19,14 +19,19 @@ from random import randint
 
 def user_D6(user):
     while True:
-        roll = input("To roll a D6 dice type anything: ")
-        if roll:
+        try:
+            roll = input("To roll a D6 dice type anything: ")
+            if roll:
+                user_d6 = randint(1, 6)
+            else:
+                raise ValueError("Empty input")   
+        except ValueError:
+            print("You did not type anything but I'll roll for you anyways.")
             user_d6 = randint(1, 6)
-            user_damage = user_d6 + user["damage"] #adding the damage modifier
-            print(f"You rolled a {user_d6}! With your additional +{user["damage"]} modifier you deal {user_damage} damage in total.")
-            return user_damage
-        else:
-            print("You did not type anything, try again.")
+        
+        user_damage = user_d6 + user["damage"] #adding the damage modifier
+        print(f"You rolled a {user_d6}! With your additional +{user["damage"]} modifier you deal {user_damage} damage in total.")
+        return user_damage
 
 
 # D20: dice with 20 sides
@@ -37,13 +42,19 @@ def user_D6(user):
 
 def user_D20():
     while True:
-        roll = input("To roll a D20 dice type anything: ")
-        if roll:
+        try:
+            roll = input("To roll a D20 dice type anything: ")
+            if roll:
+                user_d20 = randint(1, 20)
+            else:
+                raise ValueError("Empty input")
+        except ValueError:
+            print("You did not type anything but I'll roll for you anyways.")
             user_d20 = randint(1, 20)
-            print(f"You rolled a {user_d20}!")
-            return user_d20
-        else:
-            print("You did not type anything, try again.")
+
+        print(f"You rolled a {user_d20}!")
+        return user_d20
+            
 
 
 """ Enemy's dices """
