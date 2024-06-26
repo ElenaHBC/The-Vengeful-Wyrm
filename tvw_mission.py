@@ -45,10 +45,7 @@ def mission_decision(mission_result, character_name):
                     
                 elif ask_again == "no": # I am glad you changed your mind, read file way to forest
                     print(f"'I knew I could count on you, {character_name}!' said Thara sighing in relief and overcomed by exhaustion, faints.")
-                    with open("mission_accept.txt", encoding='utf-8') as mission_accept_file:
-                        content = mission_accept_file.read().replace("\n", " ")
-                        print (content)
-                        return True
+                    return True
                     
                 else: # I do not understand, loop to the beginning
                     print(f"'I did not understand that, {character_name}!' Could you repeat?")
