@@ -11,7 +11,7 @@ from tvw_charcreation import game_intro, choose_character, name_character, descr
 from tvw_mission import mission, mission_decision
 from tvw_path import choose_path, riddle, river
 from tvw_fight import fight
-
+from simple_colors import *
 import time
 
 characters = {
@@ -95,7 +95,7 @@ def the_vengeful_wyrm():
                     print (content)
                 fight(user, enemy, character_name)
             else: 
-                print("The trolls eats you. Game over.\n")
+                print(red("The trolls eats you. Game over.\n", ["reverse"]))
                 return False # returns that you lost
         else:
             if river(character_name, user) == True:
@@ -107,7 +107,7 @@ def the_vengeful_wyrm():
                     print (content)
                 fight(user, enemy, character_name)
             else: 
-                print("Game over.\n")
+                print(red("Game over.\n", ["reverse"]))
                 return False # returns that you lost
             
 
@@ -122,7 +122,7 @@ credits = {"Main character": "You", "Programmer": "Elena Tomeva", "Game idea": "
 
 while play_again == "yes".lower():
     the_vengeful_wyrm()
-    play_again = input("Do you want to play again? yes/no: ")
+    play_again = input(yellow("\nDo you want to play again? yes/no: "))
     if play_again == "no".lower():
         print("Thank you for playing the game.\n")
         print(f"{" Credits ":*^40}")

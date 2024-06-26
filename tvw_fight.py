@@ -1,10 +1,10 @@
 """
-Module for the functions of the fihgt
+Module for the functions of the fight
 - 
 """
 
 from tvw_dices import user_D6, user_D20, enemy_D6, enemy_D20
-
+from simple_colors import *
 
 # create an enemy character
 
@@ -24,23 +24,23 @@ wyrm = {
 def user_attack(user_D20, user_D6, user):
     user_attack = user_D20() + user["attack bonus"]
     if user_attack >= wyrm["armor_class"]:
-        print("Your attack was successful! Roll for damage.")
+        print(blue("Your attack was successful! Roll for damage."))
         user_damage = user_D6(user)
         ... # attack succeeds, deal damage
         wyrm["hit points"] -= user_damage
     else:
-        print("Your attack failed! The wyrm will attack you now.")
+        print(red("Your attack failed! The wyrm will attack you now."))
     return wyrm["hit points"]
 
 def enemy_attack(enemy_D20, enemy_D6, user):
     enemy_attack = enemy_D20() + wyrm["attack bonus"]
     if enemy_attack >= user["armor_class"]:
-        print("The enemy attack was successful!")
+        print(red("The enemy attack was successful!"))
         enemy_damage = enemy_D6(wyrm) + wyrm["damage"]
         ... # attack succeeds, deal damage
         user["hit points"] -= enemy_damage
     else:
-        print("The enemy attack failed! Now you roll for an attack.")
+        print(blue("The enemy attack failed! Now you roll for an attack."))
     return user["hit points"]
 
 # function for wyrm's attack
@@ -52,10 +52,10 @@ def fight(user, enemy, character_name):
     enemy = wyrm
 
     if user_intiative >= wyrm_initiative: # the user attacks first 
-        print(f"You attack first! Roll for an attack.")
+        print(blue("You attack first! Roll for an attack."))
         attacker = user
     else: # the wyrm attacks first
-        print(f"The Wyrm attacks first, brace yourself!")
+        print(red("The Wyrm attacks first, brace yourself!"))
         attacker = enemy
 
     while user["hit points"] > 0 and enemy["hit points"] > 0:
@@ -64,14 +64,14 @@ def fight(user, enemy, character_name):
             attacker = enemy
         else:
             enemy_attack(enemy_D20, enemy_D6, user)
-            print(f"{character_name}, you have {user["hit points"]} hit points left.")
+            print(f"{character_name}, you have {user["hit points"]} hit points left.\n")
             attacker = user
 
     if user["hit points"] <= 0:
-        print("The Wyrm lands it's final blow and you are defeated! ")
+        print(red("The Wyrm lands it's final blow and you are defeated! ", ["reverse"]))
     else: 
-        print("You land your final blow on the Wyrm and hear a terrible screach as it dies.")
+        print(green("You land your final blow on the Wyrm and hear a terrible screach as it dies.", ["reverse"]))
         print(f"'{character_name}!' You hear a tearful voice. 'You have defeated the Wyrm! Thank you for rescuing me!'")
-        print(f"Behind the dead body of the Wyrm, you see your friend Dayereth.")
+        print(f"Behind the dead body of the Wyrm, you see your friend Dayereth.\nHappy end.")
 
         

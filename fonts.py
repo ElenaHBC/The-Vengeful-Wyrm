@@ -47,6 +47,11 @@ print('--\N{KATAKANA LETTER TU}--')
 # simple_colors
 print(red("The Wyrm lands it's final blow and you are defeated!", ["reverse"]))
 print(blue("The Wyrm lands it's final blow and you are defeated!"))
+print(yellow("The Wyrm lands it's final blow and you are defeated!"))
+print(magenta("The Wyrm lands it's final blow and you are defeated!"))
+print(cyan("The Wyrm lands it's final blow and you are defeated!"))
+print(green("The Wyrm lands it's final blow and you are defeated!", ["reverse"]))
+print(black("The Wyrm lands it's final blow and you are defeated!", ["reverse"])) # with ot without reverse you cannot see on a black screen
 
 # termcolor
 print(colored("You attack first! Roll for an attack.", "green", attrs=['dark']))
