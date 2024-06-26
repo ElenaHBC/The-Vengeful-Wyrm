@@ -92,7 +92,7 @@ def name_character():
 # Function for detailed description:
 
 def descr_character(char_choice, character_name):
-    print("*"*20 + " Character's description " + "*"*20)
+    print(f"{" Character's description ":*^40}")
     if char_choice == "first":
         with open("dwarf.txt", encoding='utf-8') as descr_file:
             content = descr_file.read().replace("\n", " ")
@@ -109,7 +109,7 @@ def descr_character(char_choice, character_name):
 # include the intro to the game in this module 
 
 def game_intro():
-    print("*"*20 + " Welcome " + "*"*20)
+    print(f"{" Welcome ":*^40}")
     with open("intro.txt", encoding='utf-8') as intro_file: # starting the game with a short intro about it
         content = intro_file.read().replace("\n", " ")
         return content 
