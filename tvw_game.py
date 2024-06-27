@@ -65,7 +65,7 @@ wyrm = {
 def the_vengeful_wyrm():
     print(game_intro(),"\n")
     time.sleep(0.1)
-    print(f"{" Choose your character ":*^40}")
+    print(yellow(f"{" Choose your character ":*^40}"))
     time.sleep(0.1)
     print("Please choose a character from the following list: \n")
     time.sleep(0.1)
@@ -79,7 +79,7 @@ def the_vengeful_wyrm():
     mission_result = mission(character_name)
         
     if mission_result == True or mission_decision(mission_result, character_name) == True:
-        print(f"{" Chapter Two: Right Path ":*^40}")
+        print(yellow(f"{" Chapter Two: Right Path ":*^40}"))
         with open("mission_accept.txt", encoding='utf-8') as mission_accept_file: 
             content = mission_accept_file.read().replace("\n", " ")
             time.sleep(0.1)
@@ -101,7 +101,7 @@ def the_vengeful_wyrm():
             if river(character_name, user) == True:
                 print("Once you are on the other side of the river you make your way to the forest.")
                 time.sleep(0.5)
-                print(f"{" Chapter Three: Wyrm's Lair ":*^40}")
+                print(yellow(f"{" Chapter Three: Wyrm's Lair ":*^40}"))
                 with open("forest.txt", encoding='utf-8') as forest_file: 
                     content = forest_file.read().replace("\n", " ")
                     print (content)

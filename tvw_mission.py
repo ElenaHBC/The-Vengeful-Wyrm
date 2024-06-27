@@ -9,10 +9,12 @@ Create a module with functions for the mission:
 - function which short/long way
 """
 import time
+from simple_colors import *
 
 # function for accepting mission or declining
 def mission(character_name):
-    print("\n" + "*"*20 + " Chapter One: Huge Shadow " + "*"*20)
+    print()
+    print(yellow(f"{" Chapter One: Huge Shadow ":*^40}"))
     with open("mission.txt", encoding='utf-8') as mission_file:
         content = mission_file.read().replace("\n", " ")
         print (content, "\n")
@@ -40,7 +42,9 @@ def mission_decision(mission_result, character_name):
                 if ask_again == "yes":
                     with open("mission_decline.txt", encoding='utf-8') as mission_decline_file: #write a story about death and regret
                         content = mission_decline_file.read().replace("\n", " ")
-                        print ("\n", content)
+                        print()
+                        print(yellow(f"{" Chapter Two: Dark Promise ":*^40}"))
+                        print (content)
                         return False # instead of break, so we can use this output/return for combination with other functions
                     
                 elif ask_again == "no": # I am glad you changed your mind, read file way to forest

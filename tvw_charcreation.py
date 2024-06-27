@@ -21,6 +21,7 @@ Should all of these functions be in different modules for better overview?
 # Function for choosing a character: 
 # short description, saving the choice 
 
+from simple_colors import *
 
 characters = {
     "first" : {
@@ -85,6 +86,7 @@ def name_character():
         name = input("Please give a name to your character: ").capitalize()
         if name.isalpha():
             print(f"Greetings, {name}!")
+            print()
             return name
         else:
             print("Please enter a name that contains only letters and no spaces.")
@@ -92,7 +94,7 @@ def name_character():
 # Function for detailed description:
 
 def descr_character(char_choice, character_name):
-    print(f"{" Character's description ":*^40}")
+    print(yellow(f"{" Character's description ":*^40}"))
     if char_choice == "first":
         with open("dwarf.txt", encoding='utf-8') as descr_file:
             content = descr_file.read().replace("\n", " ")
@@ -109,7 +111,7 @@ def descr_character(char_choice, character_name):
 # include the intro to the game in this module 
 
 def game_intro():
-    print(f"{" Welcome ":*^40}")
+    print(yellow(f"{" Welcome ":*^40}"))
     with open("intro.txt", encoding='utf-8') as intro_file: # starting the game with a short intro about it
         content = intro_file.read().replace("\n", " ")
         return content 
