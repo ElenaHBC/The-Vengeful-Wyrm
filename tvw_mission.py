@@ -23,11 +23,11 @@ def mission(character_name):
         print(f"You have to save him, {character_name}! Please, will you help?")
         save_Dayereth = input("To answer, please type yes or no: ").lower()
         if save_Dayereth == "yes":
-            print(f"'Thank you, {character_name}!' said Thara sighing in relief and overcomed by exhaustion, faints.")
+            print(f"'Thank you, {character_name}!' said Thara sighing in relief and overcomed by exhaustion, faints.\n ")
             time.sleep(0.5)
             return True
         elif save_Dayereth == "no":
-            print(f"'I cannot believe my ears, {character_name}!' said Thara gasping in disbelief.")
+            print(f"'I cannot believe my ears, {character_name}!' said Thara gasping in disbelief.\n")
             time.sleep(0.5)
             return False
         else:
@@ -48,7 +48,7 @@ def mission_decision(mission_result, character_name):
                         return False # instead of break, so we can use this output/return for combination with other functions
                     
                 elif ask_again == "no": # I am glad you changed your mind, read file way to forest
-                    print(f"'I knew I could count on you, {character_name}!' said Thara sighing in relief and overcomed by exhaustion, faints.")
+                    print(f"'I knew I could count on you, {character_name}!' said Thara sighing in relief and overcomed by exhaustion, faints.\n")
                     return True
                     
                 else: # I do not understand, loop to the beginning

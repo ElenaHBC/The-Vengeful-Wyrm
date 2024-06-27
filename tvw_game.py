@@ -87,9 +87,9 @@ def the_vengeful_wyrm():
         path = choose_path()
         if path == "wisdom":
             if riddle(character_name) == True:
-                print("You make your way on the bridge and to the forest.")
+                print("You make your way on the bridge and to the forest.\n")
                 time.sleep(0.5)
-                print(f"{" Chapter Three: Wyrm's Lair ":*^40}")
+                print(yellow(f"{" Chapter Three: Wyrm's Lair ":*^40}"))
                 with open("forest.txt", encoding='utf-8') as forest_file: 
                     content = forest_file.read().replace("\n", " ")
                     print (content)
@@ -99,7 +99,7 @@ def the_vengeful_wyrm():
                 return False # returns that you lost
         else:
             if river(character_name, user) == True:
-                print("Once you are on the other side of the river you make your way to the forest.")
+                print("Once you are on the other side of the river you make your way to the forest.\n")
                 time.sleep(0.5)
                 print(yellow(f"{" Chapter Three: Wyrm's Lair ":*^40}"))
                 with open("forest.txt", encoding='utf-8') as forest_file: 
