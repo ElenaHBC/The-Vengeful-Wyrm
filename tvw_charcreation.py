@@ -59,7 +59,9 @@ characters = {
      }
 }
 
+
 def choose_character(characters):
+    choices = ["first", "second", "third", "1", "2", "3"]
     #print("Please choose a character from the following list: ") #remove the printing statements from the functions
     for char_num, char_inf in characters.items():
         description = (
@@ -72,11 +74,18 @@ def choose_character(characters):
         print(description)
         print()
     while True: 
-        char_choice = input("To choose a character, please write first, second or third, accordingly: ").lower()
-        if char_choice not in characters:
-            print("This is not an option.")
+        char_choice = str(input("To choose a character, please write first, second or third, accordingly: ")).lower()
+        if char_choice in choices:
+            if char_choice == "1":
+                return "first"
+            elif char_choice == "2":
+                return "second"
+            elif char_choice == "3":
+                return "third"
+            else:
+                return char_choice
         else:
-            return char_choice
+            print("This is not an option.")
         
 # Function for naming the character: 
 # naming the character, giving a detailed description of the character?
