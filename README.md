@@ -85,6 +85,11 @@ There will be different modules with separate functions needed for the game.
 - the_vengeful_wyrm()
 - play_again()
 
+> tvw_charimage
+- display_image()
+
+
 ## To do
 
-> add APIs with graphs for character, scenery
+> add APIs with graphs for character: already created a module and a function
+> implement the module in character creation/game
