@@ -106,17 +106,17 @@ def name_character():
 def descr_character(char_choice, character_name):
     print(yellow(f"{" Character's description ":*^40}"))
     if char_choice == "first":
-        display_image(dwarf_img)
+        display_image(dwarf_img, character_name)
         with open("dwarf.txt", encoding='utf-8') as descr_file:
             content = descr_file.read().replace("\n", " ")
             return character_name, content
     elif char_choice == "second":
-        display_image(elf_img)
+        display_image(elf_img, character_name)
         with open("elf.txt", encoding='utf-8') as descr_file:
             content = descr_file.read().replace("\n", " ")
             return character_name, content
     else:
-        display_image(wizzard_img)
+        display_image(wizzard_img, character_name)
         with open("human.txt", encoding='utf-8') as descr_file:
             content = descr_file.read().replace("\n", " ")
             return character_name, content

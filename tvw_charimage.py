@@ -4,6 +4,8 @@ Module for fetching images for the characters through APIs
 - each time a random image will be displayed after creating the character
 - inroduce the module and link it to the game
 - Class? so the user can describe their character and based on that the fitting image is fetched?
+- add the name of the character as a title in the image/plot? added
+- add description to the image?
 """
 
 import matplotlib.pyplot as plt
@@ -12,7 +14,7 @@ from io import BytesIO
 import requests
 
 # Function to display image from URL
-def display_image(url):
+def display_image(url, character_name):
     try:
         # Fetch the image
         response = requests.get(url)
@@ -24,7 +26,8 @@ def display_image(url):
         # Display the image using matplotlib
         plt.imshow(img)
         plt.axis('off')  # Turn off axis numbers and ticks
-        plt.show()
+        plt.title(f"{character_name}") # displays the name of the character as title
+        plt.show() # should be at the end of all other functions
     except requests.exceptions.RequestException as e:
         print(f"Failed to fetch image: {e}")
     except IOError as e:
