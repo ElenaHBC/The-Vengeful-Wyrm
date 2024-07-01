@@ -64,7 +64,10 @@ def fight(user, enemy, character_name):
             attacker = enemy
         else:
             enemy_attack(enemy_D20, enemy_D6, user)
-            print(f"{character_name}, you have {user["hit points"]} hit points left.\n")
+            if user["hit points"] <= 0:
+                print(f"{character_name}, you are mortally wounded.")
+            else:
+                print(f"{character_name}, you have {user["hit points"]} hit points left.\n")
             attacker = user
 
     if user["hit points"] <= 0:
