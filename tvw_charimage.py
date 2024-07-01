@@ -14,7 +14,7 @@ from io import BytesIO
 import requests
 
 # Function to display image from URL
-def display_image(url, character_name):
+def display_image(url, character_name, caption_text):
     try:
         # Fetch the image
         response = requests.get(url)
@@ -26,7 +26,9 @@ def display_image(url, character_name):
         # Display the image using matplotlib
         plt.imshow(img)
         plt.axis('off')  # Turn off axis numbers and ticks
-        plt.title(f"{character_name}") # displays the name of the character as title
+        plt.title(f"{character_name}", pad = 10) # displays the name of the character as title
+        plt.text(0.5, 0.1, caption_text, ha = "center", va = "top", wrap = True) # formatting of the description text should be good for all dif images
+        plt.subplots_adjust(bottom=0.2)
         plt.show() # should be at the end of all other functions
     except requests.exceptions.RequestException as e:
         print(f"Failed to fetch image: {e}")

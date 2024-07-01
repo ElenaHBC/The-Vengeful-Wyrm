@@ -106,20 +106,20 @@ def name_character():
 def descr_character(char_choice, character_name):
     print(yellow(f"{" Character's description ":*^40}"))
     if char_choice == "first":
-        display_image(dwarf_img, character_name)
         with open("dwarf.txt", encoding='utf-8') as descr_file:
-            content = descr_file.read().replace("\n", " ")
-            return character_name, content
+            caption_text = descr_file.read().replace("\n", " ")
+            display_image(dwarf_img, character_name, caption_text)
+            return character_name, caption_text
     elif char_choice == "second":
-        display_image(elf_img, character_name)
         with open("elf.txt", encoding='utf-8') as descr_file:
-            content = descr_file.read().replace("\n", " ")
-            return character_name, content
+            caption_text = descr_file.read().replace("\n", " ")
+            display_image(elf_img, character_name, caption_text)
+            return character_name, caption_text
     else:
-        display_image(wizzard_img, character_name)
         with open("human.txt", encoding='utf-8') as descr_file:
-            content = descr_file.read().replace("\n", " ")
-            return character_name, content
+            caption_text = descr_file.read().replace("\n", " ")
+            display_image(wizzard_img, character_name)
+            return character_name, caption_text
 
 # include the intro to the game in this module 
 
