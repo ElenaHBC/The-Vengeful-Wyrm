@@ -3,6 +3,7 @@ Module for fetching images for the characters through APIs
 - create a list of 3 urls for each race: dwarf, elf, human wizzard
 - each time a random image will be displayed after creating the character
 - inroduce the module and link it to the game
+- Class? so the user can describe their character and based on that the fitting image is fetched?
 """
 
 import matplotlib.pyplot as plt
@@ -36,7 +37,6 @@ dwarf_img_list = ["https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/f9e
               "https://static.wikia.nocookie.net/forgottenrealms/images/b/b6/Dwarf-5e.png/revision/latest?cb=20180814005205"]
 dwarf_img = random.choice(dwarf_img_list)
 
-display_image(dwarf_img)
 
 elf_img_list = ["https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/16839a88-ba93-4b12-a311-eded58cf9f7e/dg3at3m-d17dcd60-61de-45a1-99ca-1a6c120830ea.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzE2ODM5YTg4LWJhOTMtNGIxMi1hMzExLWVkZWQ1OGNmOWY3ZVwvZGczYXQzbS1kMTdkY2Q2MC02MWRlLTQ1YTEtOTljYS0xYTZjMTIwODMwZWEucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.TcPUWcZr8Sge3t25DMksvyG2-AzNhUbJaqdfzYvuq0Q",
                 "https://assets.playgroundai.com/091bb2df-428a-4f62-8062-a6533f714f6d.png",
@@ -44,7 +44,6 @@ elf_img_list = ["https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/16839
 
 elf_img = random.choice(elf_img_list)
 
-display_image(elf_img)
 
 wizzard_img_list = ["https://images.nightcafe.studio/jobs/HVW6ec4BjYhrx4r5Z5Rx/HVW6ec4BjYhrx4r5Z5Rx--1--i6vxc.jpg?tr=w-1600,c-at_max",
                "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/3362b80d-a497-446e-91b3-89fa22a794a8/dgz379s-24246f54-c1fc-4259-a91e-5ccf90b7af75.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzMzNjJiODBkLWE0OTctNDQ2ZS05MWIzLTg5ZmEyMmE3OTRhOFwvZGd6Mzc5cy0yNDI0NmY1NC1jMWZjLTQyNTktYTkxZS01Y2NmOTBiN2FmNzUuanBnIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.N-YYmTwFJA7T8TZxcZpn8VJ4MPHYnYn3ZXO4Ab1wKb8",
@@ -52,4 +51,3 @@ wizzard_img_list = ["https://images.nightcafe.studio/jobs/HVW6ec4BjYhrx4r5Z5Rx/H
 
 wizzard_img = random.choice(wizzard_img_list)
 
-display_image(wizzard_img)

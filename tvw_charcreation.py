@@ -22,6 +22,7 @@ Should all of these functions be in different modules for better overview?
 # short description, saving the choice 
 
 from simple_colors import *
+from tvw_charimage import display_image, dwarf_img, elf_img, wizzard_img
 
 characters = {
     "first" : {
@@ -105,14 +106,17 @@ def name_character():
 def descr_character(char_choice, character_name):
     print(yellow(f"{" Character's description ":*^40}"))
     if char_choice == "first":
+        display_image(dwarf_img)
         with open("dwarf.txt", encoding='utf-8') as descr_file:
             content = descr_file.read().replace("\n", " ")
             return character_name, content
     elif char_choice == "second":
+        display_image(elf_img)
         with open("elf.txt", encoding='utf-8') as descr_file:
             content = descr_file.read().replace("\n", " ")
             return character_name, content
     else:
+        display_image(wizzard_img)
         with open("human.txt", encoding='utf-8') as descr_file:
             content = descr_file.read().replace("\n", " ")
             return character_name, content
