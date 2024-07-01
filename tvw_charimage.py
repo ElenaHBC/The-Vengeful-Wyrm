@@ -24,11 +24,13 @@ def display_image(url, character_name, caption_text):
         img = Image.open(BytesIO(response.content))
 
         # Display the image using matplotlib
-        plt.imshow(img)
-        plt.axis('off')  # Turn off axis numbers and ticks
-        plt.title(f"{character_name}", pad = 10) # displays the name of the character as title
-        plt.text(0.5, 0.1, caption_text, ha = "center", va = "top", wrap = True) # formatting of the description text should be good for all dif images
-        plt.subplots_adjust(bottom=0.2)
+        fig, ax = plt.subplots(figsize=(10, 10))
+        ax.imshow(img)
+        ax.axis('off')  # Turn off axis numbers and ticks
+        plt.title(f"{character_name}", pad = 30) # displays the name of the character as title
+        fig.text(0.5, 0.1, f"{character_name}{caption_text}", ha = "center", va = "top", wrap = True,
+                 bbox=dict(facecolor='white', alpha=0.5, edgecolor='none')) # formatting of the description text should be good for all dif images
+        plt.subplots_adjust(top = 0.85, bottom = 0.2)
         plt.show() # should be at the end of all other functions
     except requests.exceptions.RequestException as e:
         print(f"Failed to fetch image: {e}")

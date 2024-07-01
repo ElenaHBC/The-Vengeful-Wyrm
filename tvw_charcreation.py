@@ -118,7 +118,7 @@ def descr_character(char_choice, character_name):
     else:
         with open("human.txt", encoding='utf-8') as descr_file:
             caption_text = descr_file.read().replace("\n", " ")
-            display_image(wizzard_img, character_name)
+            display_image(wizzard_img, character_name, caption_text)
             return character_name, caption_text
 
 # include the intro to the game in this module 
