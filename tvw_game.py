@@ -11,6 +11,7 @@ from tvw_charcreation import game_intro, choose_character, name_character, descr
 from tvw_mission import mission, mission_decision
 from tvw_path import choose_path, riddle, river
 from tvw_fight import fight
+from tvw_charimage import display_wyrm, wyrm_img
 from simple_colors import *
 import time
 
@@ -92,6 +93,7 @@ def the_vengeful_wyrm():
                 print(yellow(f"{" Chapter Three: Wyrm's Lair ":*^40}"))
                 with open("forest.txt", encoding='utf-8') as forest_file: 
                     content = forest_file.read().replace("\n", " ")
+                    display_wyrm(wyrm_img, character_name)
                     print (content)
                 fight(user, enemy, character_name)
             else: 
@@ -104,6 +106,7 @@ def the_vengeful_wyrm():
                 print(yellow(f"{" Chapter Three: Wyrm's Lair ":*^40}"))
                 with open("forest.txt", encoding='utf-8') as forest_file: 
                     content = forest_file.read().replace("\n", " ")
+                    display_wyrm(wyrm_img, character_name)
                     print (content)
                 fight(user, enemy, character_name)
             else: 

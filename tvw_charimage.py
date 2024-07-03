@@ -13,7 +13,7 @@ from PIL import Image
 from io import BytesIO
 import requests
 
-# Function to display image from URL
+# Function to display image from URL for character
 def display_image(url, character_name, caption_text):
     try:
         # Fetch the image
@@ -37,7 +37,7 @@ def display_image(url, character_name, caption_text):
     except IOError as e:
         print(f"Failed to open image: {e}")
 
-# Example URL lists
+# Example URL lists for characters
 import random
 dwarf_img_list = ["https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/f9e05a5d-03ce-4fb2-ba79-3b15306a0cdd/de5fzr2-4f1a02ab-d733-4186-9fba-bb810a622c88.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2Y5ZTA1YTVkLTAzY2UtNGZiMi1iYTc5LTNiMTUzMDZhMGNkZFwvZGU1ZnpyMi00ZjFhMDJhYi1kNzMzLTQxODYtOWZiYS1iYjgxMGE2MjJjODguanBnIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.pYL1yabIDa1Cd7DOHV3-JXi5Z1yeBDm-LcxIo_qHZ20",
               "https://i0.wp.com/nerdarchy.com/wp-content/uploads/2017/06/dwarfminer.jpg?w=564&ssl=1", 
@@ -58,3 +58,33 @@ wizzard_img_list = ["https://images.nightcafe.studio/jobs/HVW6ec4BjYhrx4r5Z5Rx/H
 
 wizzard_img = random.choice(wizzard_img_list)
 
+# Function to display image from URL for wyrm
+def display_wyrm(url, character_name):
+    try:
+        # Fetch the image
+        response = requests.get(url)
+        response.raise_for_status()  # Check if the request was successful
+
+        # Open the image using PIL
+        img = Image.open(BytesIO(response.content))
+
+        # Display the image using matplotlib
+        fig, ax = plt.subplots(figsize=(10, 10))
+        ax.imshow(img)
+        ax.axis('off')  # Turn off axis numbers and ticks
+        plt.title("A wild angry wyrm appears!", pad = 30) # displays the name of the character as title
+        fig.text(0.5, 0.1, f"{character_name}, how dare you enter my forest! You will pay with your life!", 
+                 ha = "center", va = "top", wrap = True,
+                 bbox=dict(facecolor='white', alpha=0.5, edgecolor='none')) # formatting of the description text should be good for all dif images
+        plt.subplots_adjust(top = 0.85, bottom = 0.2)
+        plt.show() # should be at the end of all other functions
+    except requests.exceptions.RequestException as e:
+        print(f"Failed to fetch image: {e}")
+    except IOError as e:
+        print(f"Failed to open image: {e}")
+
+wyrm_img_list = ["https://static.wikia.nocookie.net/dragons/images/9/98/C35d2456e3197272474f01d1f0c70a5a.jpg/revision/latest?cb=20200107153740",
+                 "https://awoiaf.westeros.org/images/thumb/a/a0/Firewyrm_by_Kevin_Catalan.jpg/1200px-Firewyrm_by_Kevin_Catalan.jpg",
+                 "https://i.redd.it/ui0qntdao7qb1.png"]
+
+wyrm_img = random.choice(wyrm_img_list)
