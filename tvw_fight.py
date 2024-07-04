@@ -41,7 +41,7 @@ def enemy_attack(enemy_D20, enemy_D6, user):
         ... # attack succeeds, deal damage
         user["hit points"] -= enemy_damage  # maybe add a healthbar?
     else:
-        print(blue("The enemy attack failed! Now you roll for an attack."))
+        print(blue("The enemy attack failed!"))
     return user["hit points"]
 
 # function for wyrm's attack
@@ -63,18 +63,19 @@ def fight(user, enemy, character_name):
         attacker = enemy
 
     while user["hit points"] > 0 and enemy["hit points"] > 0:
-        # Update and draw health bars
-        user_healthbar.update()
-        user_healthbar.draw()
         if attacker == user:
             user_attack(user_D20, user_D6, user)
             attacker = enemy
         else:
             enemy_attack(enemy_D20, enemy_D6, user)
+            # Update and draw health bars
+            user_healthbar.update()
+            user_healthbar.draw()
             if user["hit points"] <= 0:
                 print(f"{character_name}, you are mortally wounded.")
             else:
-                print(f"{character_name}, you have {user["hit points"]} hit points left.\n")
+                #print(f"{character_name}, you have {user["hit points"]} hit points left.\n")
+                print(blue(f"{character_name}, now it's your turn to attack!"))
             attacker = user
 
     if user["hit points"] <= 0:
