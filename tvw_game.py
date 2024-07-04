@@ -121,7 +121,12 @@ def the_vengeful_wyrm():
 
 play_again = "yes"
 
-credits = {"Main character": "You", "Programmer": "Elena Tomeva", "Game idea": "Elena Tomeva", "Texts": "Elena Tomeva & ChatGpT", "Supervision": "PyLadies Vienna"}
+credits = {"Main character": "You", 
+           "Programmer": "Elena Tomeva", 
+           "Game idea": "Elena Tomeva", 
+           "Texts": "Elena Tomeva & ChatGpT", 
+           "Supervision": "PyLadies Vienna",
+           "HealthBar code": "orkslayergamedev on GitHub"}
 
 while play_again == "yes".lower():
     the_vengeful_wyrm()
