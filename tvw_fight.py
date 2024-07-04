@@ -5,6 +5,7 @@ Module for the functions of the fight
 
 from tvw_dices import user_D6, user_D20, enemy_D6, enemy_D20
 from simple_colors import *
+from tvw_healthbar import HealthBar
 
 # create an enemy character
 
@@ -38,7 +39,8 @@ def enemy_attack(enemy_D20, enemy_D6, user):
         print(red("The enemy attack was successful!"))
         enemy_damage = enemy_D6(wyrm) + wyrm["damage"]
         ... # attack succeeds, deal damage
-        user["hit points"] -= enemy_damage
+        user["hit points"] -= enemy_damage  # maybe add a healthbar?
+        user.health_bar.draw()
     else:
         print(blue("The enemy attack failed! Now you roll for an attack."))
     return user["hit points"]
@@ -50,6 +52,8 @@ def fight(user, enemy, character_name):
     user_intiative = user_D20() + user["initiative bonus"]
     wyrm_initiative = enemy_D20() + wyrm["initiative bonus"]
     enemy = wyrm
+
+    user_healthbar = HealthBar(user, color="green")
 
     if user_intiative >= wyrm_initiative: # the user attacks first 
         print(blue("You attack first! Roll for an attack."))
@@ -69,6 +73,10 @@ def fight(user, enemy, character_name):
             else:
                 print(f"{character_name}, you have {user["hit points"]} hit points left.\n")
             attacker = user
+
+    # Update and draw health bars
+    user_healthbar.update()
+    user_healthbar.draw()
 
     if user["hit points"] <= 0:
         print(red("The Wyrm lands it's final blow and you are defeated! ", ["reverse"]))
