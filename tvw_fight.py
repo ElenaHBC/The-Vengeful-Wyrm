@@ -40,7 +40,6 @@ def enemy_attack(enemy_D20, enemy_D6, user):
         enemy_damage = enemy_D6(wyrm) + wyrm["damage"]
         ... # attack succeeds, deal damage
         user["hit points"] -= enemy_damage  # maybe add a healthbar?
-        user.health_bar.draw()
     else:
         print(blue("The enemy attack failed! Now you roll for an attack."))
     return user["hit points"]
@@ -55,6 +54,7 @@ def fight(user, enemy, character_name):
 
     user_healthbar = HealthBar(user, color="green")
 
+
     if user_intiative >= wyrm_initiative: # the user attacks first 
         print(blue("You attack first! Roll for an attack."))
         attacker = user
@@ -63,6 +63,9 @@ def fight(user, enemy, character_name):
         attacker = enemy
 
     while user["hit points"] > 0 and enemy["hit points"] > 0:
+        # Update and draw health bars
+        user_healthbar.update()
+        user_healthbar.draw()
         if attacker == user:
             user_attack(user_D20, user_D6, user)
             attacker = enemy
@@ -73,10 +76,6 @@ def fight(user, enemy, character_name):
             else:
                 print(f"{character_name}, you have {user["hit points"]} hit points left.\n")
             attacker = user
-
-    # Update and draw health bars
-    user_healthbar.update()
-    user_healthbar.draw()
 
     if user["hit points"] <= 0:
         print(red("The Wyrm lands it's final blow and you are defeated! ", ["reverse"]))
