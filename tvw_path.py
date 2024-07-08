@@ -12,11 +12,11 @@ def choose_path():
     while True:
         print("You see a river blocking your way. To cross the river you have to choose between two paths.")
         print("."*20)
-        path = input("Do you choose the path of wisdom or the path of strength? (wisdom/strength): ").lower()
-        if path in ["wisdom","strength"]:
+        path = input("Do you choose the path of wisdom or the path of strength? (1) wisdom/ 2) strength): ").lower()
+        if path in ["wisdom","strength", "1", "2"]:
             return path
         else:
-            print("This is not a valid response. Please choose either 'wisdom' or 'strength'.")
+            print("This is not a valid response. Please choose either '1) wisdom' or '2) strength'.")
 
 def riddle(character_name):
     print(f"You chose the path of wisdom, {character_name}. You see a bridge over the river and proceed to cross it.")

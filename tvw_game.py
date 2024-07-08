@@ -65,7 +65,7 @@ wyrm = {
 
 def the_vengeful_wyrm():
     print(game_intro(),"\n")
-    time.sleep(0.1)
+    time.sleep(3)
     print(yellow(f"{" Choose your character ":*^40}"))
     time.sleep(0.1)
     print("Please choose a character from the following list: \n")
@@ -86,7 +86,7 @@ def the_vengeful_wyrm():
             time.sleep(0.1)
             print (content)
         path = choose_path()
-        if path == "wisdom":
+        if path == "wisdom" or path == "1":
             if riddle(character_name) == True:
                 print("You make your way on the bridge and to the forest.\n")
                 time.sleep(0.5)
