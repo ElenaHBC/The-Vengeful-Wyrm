@@ -1,6 +1,3 @@
-Requiered libraries for installation for "The Vengeful Wyrm"
-created with pip freeze on 02.07.2024
-
 annotated-types==0.7.0
 anyio==4.4.0
 certifi==2024.6.2
