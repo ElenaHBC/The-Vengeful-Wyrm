@@ -99,9 +99,10 @@ There will be different modules with separate functions needed for the game.
 ### Prerequisites
 - Python 3.12.2 [How to install python for Windows](https://pyladies.at/2024/pyladies-en-vienna-2024-spring/beginners-en/install_vienna/windows/)
 - `pip` (Python package installer)
-- install and configure git [How to for Windows](https://pyladies.at/2024/pyladies-en-vienna-2024-spring/git-en/install/windows/)
+- Git [How to install and configure git for Windows](https://pyladies.at/2024/pyladies-en-vienna-2024-spring/git-en/install/windows/)
 
 ### Instalation
+In the command prompt:
 
 1. Clone the repository:
 ```
