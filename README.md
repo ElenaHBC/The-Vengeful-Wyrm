@@ -123,6 +123,7 @@ python tvw_game.py
 ### Play the game
 - Follow the on-screen instructions
 - Type your answer when prompted
+- Close any pop-ups to continue the game
 
 ## Credits
 The code for the HealthBar is from [orkslayergamedev](https://github.com/orkslayergamedev) from his tutorial for [Python Classes - Text-Based Battle Scene](https://github.com/orkslayergamedev/python-classes-text-battle/tree/master)
