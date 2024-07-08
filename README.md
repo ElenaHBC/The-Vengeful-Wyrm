@@ -98,14 +98,20 @@ There will be different modules with separate functions needed for the game.
 ### Instalation
 
 1. Clone the repository:
-`git clone https://github.com/ElenaHBC/The-Vengeful-Wyrm.git`
-`cd The-Vengeful-Wyrm`
+```
+git clone https://github.com/ElenaHBC/The-Vengeful-Wyrm.git
+cd The-Vengeful-Wyrm
+```
 
 2. Install the required dependencies:
-`pip install -r required_lib.txt`
+```
+pip install -r required_lib.txt
+```
 
 3. Run the game
-`python tvw_game.py`
+```
+python tvw_game.py
+```
 
 ### Play the game
 - Follow the on-screen instructions
