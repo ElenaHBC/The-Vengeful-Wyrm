@@ -5,7 +5,7 @@ Module for the functions of the fight
 
 from tvw_dices import user_D6, user_D20, enemy_D6, enemy_D20
 from simple_colors import *
-from tvw_healthbar import HealthBar
+from tvw_healthbar import HealthBar, HealthBar_Enemy
 
 # create an enemy character
 
@@ -53,6 +53,7 @@ def fight(user, enemy, character_name):
     enemy = wyrm
 
     user_healthbar = HealthBar(user, color="green")
+    enemy_healthbar = HealthBar_Enemy(enemy)
 
 
     if user_intiative >= wyrm_initiative: # the user attacks first 
@@ -70,7 +71,9 @@ def fight(user, enemy, character_name):
             enemy_attack(enemy_D20, enemy_D6, user)
             # Update and draw health bars
             user_healthbar.update()
+            enemy_healthbar.update()
             user_healthbar.draw()
+            enemy_healthbar.draw()
             if user["hit points"] <= 0:
                 print(f"{character_name}, you are mortally wounded.")
             else:

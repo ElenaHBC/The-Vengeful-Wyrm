@@ -49,3 +49,21 @@ class HealthBar:
               f"{lost_bars * self.symbol_lost}"
               f"{self.colors['default'] if self.is_colored else ''}"
               f"{self.barrier}")
+
+class HealthBar_Enemy(HealthBar):
+    def __init__(self,
+                 entity,
+                 length: int = 20,
+                 is_colored: bool = True) -> None:
+        super().__init__(entity, length, is_colored, color="purple")
+
+    def draw(self) -> None:
+        remaining_bars = round(self.current_value / self.max_value * self.length)
+        lost_bars = self.length - remaining_bars
+        print(f"WYRM's HEALTH:")
+        print(f"{self.barrier}"
+              f"{self.color if self.is_colored else ''}"
+              f"{remaining_bars * self.symbol_remaining}"
+              f"{lost_bars * self.symbol_lost}"
+              f"{self.colors['default'] if self.is_colored else ''}"
+              f"{self.barrier}")
