@@ -54,7 +54,7 @@ characters = {
 wyrm = {
         "race" : "wyrm",
         "class" : "fighter",
-        "hit points" : 25,
+        "hit points" : 20,
         "armor_class" : 10,
         "weapon" : "tale",
         "initiative bonus" : 1,
