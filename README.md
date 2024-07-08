@@ -59,34 +59,38 @@ There will be different modules with separate functions needed for the game.
 - game_intro()
 - choose_character(characters)
 - name_character()
-- descr_character(char_choice)
+- descr_character(char_choice, character_name)
 
 > tvw_mission:
 - mission()
 - mission_decision(mission)
 
 > tvw_dices
-- user_D6()
+- user_D6(user)
 - user_D20()
-- enemy_D6()
+- enemy_D6(wyrm)
 - enemy_D20()
 
 > tvw_path
 - choose_path()
-- riddle()
-- river()
+- riddle(character_name)
+- river(character_name, user)
 
 > tvw_fight
-- user_attack()
-- enemy_attack()
-- fight()
+- user_attack(user_D20, user_D6, user)
+- enemy_attack(enemy_D20, enemy_D6, user)
+- fight(ser, enemy, character_name)
 
 > tvw_game
 - the_vengeful_wyrm()
 - play_again()
 
 > tvw_charimage
-- display_image()
+- display_image(url, character_name, caption_text)
+- display_wyrm(url, character_name)
+
+> tvw_healthbar
+- Class HealthBar (__init__(), update(), draw())
 
 
 ## How to install and play
@@ -118,4 +122,4 @@ python tvw_game.py
 - Type your answer when prompted
 
 ## Credits
-The code for the HealthBar is from @orkslayergamedev from his tutorial for [Python Classes - Text-Based Battle Scene](https://github.com/orkslayergamedev/python-classes-text-battle/tree/master)
+The code for the HealthBar is from [orkslayergamedev](https://github.com/orkslayergamedev) from his tutorial for [Python Classes - Text-Based Battle Scene](https://github.com/orkslayergamedev/python-classes-text-battle/tree/master)
