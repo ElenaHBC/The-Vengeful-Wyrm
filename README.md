@@ -89,8 +89,27 @@ There will be different modules with separate functions needed for the game.
 - display_image()
 
 
-## To do
+## How to install and play
 
-> add APIs with graphs for character: already created a module and a function
-> implement the module in character creation/game
-> write instructions on how to download/install/play game
+### Prerequisites
+- Python 3.12.2 [How to install python for Windows](https://pyladies.at/2024/pyladies-en-vienna-2024-spring/beginners-en/install_vienna/windows/)
+- `pip` (Python package installer)
+
+### Instalation
+
+1. Clone the repository:
+`git clone https://github.com/ElenaHBC/The-Vengeful-Wyrm.git`
+`cd The-Vengeful-Wyrm`
+
+2. Install the required dependencies:
+`pip install -r required_lib.txt`
+
+3. Run the game
+`python tvw_game.py`
+
+### Play the game
+- Follow the on-screen instructions
+- Type your answer when prompted
+
+## Credits
+The code for the HealthBar is from @orkslayergamedev from his tutorial for [Python Classes - Text-Based Battle Scene](https://github.com/orkslayergamedev/python-classes-text-battle/tree/master)
