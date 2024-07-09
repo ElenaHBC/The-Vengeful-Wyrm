@@ -7,37 +7,24 @@ from tvw_dices import user_D6, user_D20, enemy_D6, enemy_D20
 from simple_colors import *
 from tvw_healthbar import HealthBar, HealthBar_Enemy
 
-# create an enemy character
-
-wyrm = {
-        "race" : "wyrm",
-        "class" : "fighter",
-        "hit points" : 20,
-        "armor_class" : 10,
-        "weapon" : "tale",
-        "initiative bonus" : 1,
-        "attack bonus" : 1,
-        "damage" : 2,
-}
-
 # function for user's attack
 
-def user_attack(user_D20, user_D6, user):
+def user_attack(user_D20, user_D6, user, enemy):
     user_attack = user_D20() + user["attack bonus"]
-    if user_attack >= wyrm["armor_class"]:
+    if user_attack >= enemy["armor_class"]:
         print(blue("Your attack was successful! Roll for damage."))
         user_damage = user_D6(user)
         ... # attack succeeds, deal damage
-        wyrm["hit points"] -= user_damage
+        enemy["hit points"] -= user_damage
     else:
         print(red("Your attack failed! The wyrm will attack you now."))
-    return wyrm["hit points"]
+    return enemy["hit points"]
 
-def enemy_attack(enemy_D20, enemy_D6, user):
-    enemy_attack = enemy_D20() + wyrm["attack bonus"]
+def enemy_attack(enemy_D20, enemy_D6, user, enemy):
+    enemy_attack = enemy_D20() + enemy["attack bonus"]
     if enemy_attack >= user["armor_class"]:
         print(red("The enemy attack was successful!"))
-        enemy_damage = enemy_D6(wyrm) + wyrm["damage"]
+        enemy_damage = enemy_D6(enemy) + enemy["damage"]
         ... # attack succeeds, deal damage
         user["hit points"] -= enemy_damage  # maybe add a healthbar?
     else:
@@ -49,8 +36,7 @@ def enemy_attack(enemy_D20, enemy_D6, user):
 # function for fight
 def fight(user, enemy, character_name):
     user_intiative = user_D20() + user["initiative bonus"]
-    wyrm_initiative = enemy_D20() + wyrm["initiative bonus"]
-    enemy = wyrm
+    wyrm_initiative = enemy_D20() + enemy["initiative bonus"]
 
     user_healthbar = HealthBar(user, color="green")
     enemy_healthbar = HealthBar_Enemy(enemy)
@@ -65,10 +51,10 @@ def fight(user, enemy, character_name):
 
     while user["hit points"] > 0 and enemy["hit points"] > 0:
         if attacker == user:
-            user_attack(user_D20, user_D6, user)
+            user_attack(user_D20, user_D6, user, enemy)
             attacker = enemy
         else:
-            enemy_attack(enemy_D20, enemy_D6, user)
+            enemy_attack(enemy_D20, enemy_D6, user, enemy)
             # Update and draw health bars
             user_healthbar.update()
             enemy_healthbar.update()

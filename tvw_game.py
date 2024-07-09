@@ -14,8 +14,9 @@ from tvw_fight import fight
 from tvw_charimage import display_wyrm, wyrm_img
 from simple_colors import *
 import time
+import copy
 
-characters = {
+original_characters = {
     "first" : {
         "race" : "dwarf",
         "class" : "fighter",
@@ -51,7 +52,7 @@ characters = {
      }
 }
 
-wyrm = {
+original_wyrm = {
         "race" : "wyrm",
         "class" : "fighter",
         "hit points" : 20,
@@ -64,6 +65,9 @@ wyrm = {
 
 
 def the_vengeful_wyrm():
+    characters = copy.deepcopy(original_characters) # creates a deep copy of nested dictionairy
+    wyrm = dict(original_wyrm) # here a "shallow" copy is sufficient, since wyrm is a simple dictionairy
+
     print(game_intro(),"\n")
     time.sleep(3)
     print(yellow(f"{" Choose your character ":*^40}"))

@@ -23,8 +23,9 @@ Should all of these functions be in different modules for better overview?
 
 from simple_colors import *
 from tvw_charimage import display_image, dwarf_img, elf_img, wizzard_img
+import copy
 
-characters = {
+original_characters = {
     "first" : {
         "race" : "dwarf",
         "class" : "fighter",
@@ -60,6 +61,7 @@ characters = {
      }
 }
 
+characters = copy.deepcopy(original_characters)
 
 def choose_character(characters):
     choices = ["first", "second", "third", "1", "2", "3"]
