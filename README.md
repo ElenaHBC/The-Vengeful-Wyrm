@@ -78,8 +78,8 @@ There will be different modules with separate functions needed for the game.
 - river(character_name, user)
 
 > tvw_fight
-- user_attack(user_D20, user_D6, user)
-- enemy_attack(enemy_D20, enemy_D6, user)
+- user_attack(user_D20, user_D6, user, enemy)
+- enemy_attack(enemy_D20, enemy_D6, user, enemy)
 - fight(ser, enemy, character_name)
 
 > tvw_game
@@ -98,15 +98,20 @@ There will be different modules with separate functions needed for the game.
 
 ### Prerequisites
 - Python 3.12.2 [How to install python for Windows](https://pyladies.at/2024/pyladies-en-vienna-2024-spring/beginners-en/install_vienna/windows/)
-- `pip` (Python package installer)
-- Git [How to install and configure git for Windows](https://pyladies.at/2024/pyladies-en-vienna-2024-spring/git-en/install/windows/)
+- `pip` (Python package installer, part of Python)
+- Git (optional, recommended) [How to install and configure git for Windows](https://pyladies.at/2024/pyladies-en-vienna-2024-spring/git-en/install/windows/)
 
 ### Instalation
-In the command prompt:
 
-1. Clone the repository:
+1. Clone the repository either trough git in the command prompt (recommended):
 ```
 git clone https://github.com/ElenaHBC/The-Vengeful-Wyrm.git
+cd The-Vengeful-Wyrm
+```
+
+OR download the code as ZIP. Extract the files in a directory.
+Open the directory in the command prompt:
+```
 cd The-Vengeful-Wyrm
 ```
 
