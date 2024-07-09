@@ -12,7 +12,7 @@ def choose_path():
     while True:
         print("You see a river blocking your way. To cross the river you have to choose between two paths.")
         print("."*20)
-        path = input("Do you choose the path of wisdom or the path of strength? (1) wisdom/ 2) strength): ").lower()
+        path = input("Do you choose the path of wisdom or the path of strength? 1) wisdom/ 2) strength: ").lower()
         if path in ["wisdom","strength", "1", "2"]:
             return path
         else:

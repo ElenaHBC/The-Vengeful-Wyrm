@@ -77,7 +77,7 @@ def choose_character(characters):
         print(description)
         print()
     while True: 
-        char_choice = str(input("To choose a character, please write first, second or third, accordingly: ")).lower()
+        char_choice = str(input("To choose a character, please write 1) first, 2) second or 3) third, accordingly: ")).lower()
         if char_choice in choices:
             if char_choice == "1":
                 return "first"
